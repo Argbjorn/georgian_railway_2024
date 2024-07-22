@@ -1,0 +1,14 @@
+{
+  "name": "georgian_railway_2024",
+  "version": "1.0.0",
+  "description": "This map shows Georgian railway network and particular routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Remnev",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
