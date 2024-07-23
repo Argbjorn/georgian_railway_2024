@@ -7,3 +7,12 @@ html, body, #map {
     height: 100%;
     font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
+
+.route-link {
+    cursor: pointer;
+}
+
+.route-link.active {
+    cursor: pointer;
+    font-weight: 700;
+}
