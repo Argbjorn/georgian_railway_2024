@@ -29,7 +29,7 @@ async function createRoute(routeId) {
 
     // Sets bounds for fly to bounds
     const b = routeData.elements[0].bounds;
-    newRoute.setBounds(L.latLngBounds([b.minlat, b.minlon], [b.maxlat, b.maxlon]));
+    newRoute.setBounds(L.latLngBounds([b.minlat - 1, b.minlon], [b.maxlat + 1, b.maxlon + 1])); // Corrections are for better pan with an opened sidebar
 
     routeData.elements.forEach(element => {
         element.members.forEach(async (member) => {
