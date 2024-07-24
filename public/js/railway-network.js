@@ -1,4 +1,7 @@
 import { getOverpassData } from "./main.js";
+import { getDefaultMapCenter } from "./map.js";
+import { map } from "./map.js";
+
 
 export class RailwayNetwork {
     constructor() {
@@ -23,10 +26,11 @@ export class RailwayNetwork {
 
     show() {
         this.layerGroup.addTo(map);
+        map.setView(getDefaultMapCenter(), 8)
+
     }
 
     hide() {
         this.layerGroup.remove();
-        console.log('Removing the railway network');
     }
 }
