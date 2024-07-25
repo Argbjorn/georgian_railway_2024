@@ -1,5 +1,6 @@
 import { RailwayNetwork } from "./railway-network.js";
 import { Route } from "./route.js";
+import { routesList } from "./routes-list.js";
 
 // Create a global storage for an active route
 let activeRoute = [];
@@ -93,6 +94,8 @@ async function toggleRoute(routeId) {
 export let railwayNetwork = new RailwayNetwork();
 railwayNetwork.show();
 
+makeRoutesList(routesList);
+
 // Adds event listeners to routes links
     const routeLinks = document.querySelectorAll('.route-link');
     routeLinks.forEach(element => {
@@ -106,3 +109,55 @@ railwayNetwork.show();
             await toggleRoute(element.getAttribute('id')).then();
         })
     })
+
+function makeRoutesList(routesList) {
+    const categories = [["Tbilisi ←→ Batumi (Stadler)", "stadler"],
+        ["From/To Tbilisi", "tbilisi"],
+        ["From/To Batumi", "batumi"],
+        ["From/To Kutaisi", "kutaisi"],
+        ["From/To Zestafoni", "zestafoni"]
+    ]
+
+    // Creates the main container for the whole routes list
+    let parentContainer = document.querySelector(".sidebar-pane-content");
+
+    // Creates route categories
+    for(let i = 0; i < categories.length; i++) {
+        let listContainer = document.createElement('div');
+        let categoryHeader = document.createElement('p');
+        let listElement = document.createElement('ul');
+
+        parentContainer.appendChild(listContainer);
+        listContainer.appendChild(categoryHeader);
+        listContainer.appendChild(listElement);
+
+        categoryHeader.innerHTML += categories[i][0];
+        listContainer.setAttribute("id", categories[i][1]);
+    }
+    
+    // Add routes to categories
+    routesList.forEach((item) => {
+        // Creates list item
+        let listItem = document.createElement('li');
+
+        // Creates route link
+        let routeLink = document.createElement('a');
+        routeLink.classList.add('route-link');
+        routeLink.setAttribute('id', item.id);
+
+        // Creates span for route reference
+        let routeReference = document.createElement('span');
+        routeReference.classList.add('route-label');
+
+        // Combine all the components
+        let listElement = document.querySelector('#' + item.category);
+        listElement.appendChild(listItem);
+        listItem.appendChild(routeLink);
+        routeLink.appendChild(routeReference);
+
+        // Add texts
+        routeReference.innerHTML += item.ref;
+        routeLink.innerHTML += item["name:en"];
+    })
+}
+
