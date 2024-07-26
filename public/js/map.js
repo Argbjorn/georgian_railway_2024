@@ -22,13 +22,25 @@ const tiles = {
 };
 const overlays = {}
 
-// Initialize layer control
+// Initialize the layer control
 const layerControl = L.control.layers(tiles, overlays, {
     collapsed: false,
     sortLayers: true,
     position: 'topleft'
 }).addTo(map);
 
+// Initialize the sidepanel
+const panelLeft = L.control.sidepanel('mySidepanel', {
+    panelPosition: 'right',
+    hasTabs: true,
+    tabsPosition: 'right',
+    pushControls: true,
+    darkMode: false,
+    startTab: 'tab-1'
+  }).addTo(map);
+
+  // Returns the default map center
 export function getDefaultMapCenter() {
     return [41.721700, 44.799748];
 }
+

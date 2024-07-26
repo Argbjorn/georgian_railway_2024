@@ -30,7 +30,7 @@ async function createRoute(routeId) {
 
     // Sets bounds for fly to bounds
     const b = routeData.elements[0].bounds;
-    newRoute.setBounds(L.latLngBounds([b.minlat - 1, b.minlon], [b.maxlat + 1, b.maxlon + 1])); // Corrections are for better pan with an opened sidebar
+    newRoute.setBounds(L.latLngBounds([b.minlat - 1, b.minlon], [b.maxlat + 1, b.maxlon + 1])); // Corrections are for better pan with an opened sidepanel
 
     routeData.elements.forEach(element => {
         element.members.forEach(async (member) => {
@@ -119,7 +119,7 @@ function makeRoutesList(routesList) {
     ]
 
     // Creates the main container for the whole routes list
-    let parentContainer = document.querySelector(".sidebar-pane-content");
+    let parentContainer = document.querySelector(".sidepanel-routes-content");
 
     // Creates route categories
     for(let i = 0; i < categories.length; i++) {
