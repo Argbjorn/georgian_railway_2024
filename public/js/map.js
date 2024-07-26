@@ -30,16 +30,32 @@ const layerControl = L.control.layers(tiles, overlays, {
 }).addTo(map);
 
 // Initialize the sidepanel
-const panelLeft = L.control.sidepanel('mySidepanel', {
+const panelRight = L.control.sidepanel('mySidepanel', {
     panelPosition: 'right',
     hasTabs: true,
-    tabsPosition: 'right',
+    tabsPosition: 'top',
     pushControls: true,
     darkMode: false,
     startTab: 'tab-1'
-  }).addTo(map);
+}).addTo(map);
 
-  // Returns the default map center
+// Opens sidepanel
+function openSidePanelIfClosed() {
+    const panel = document.querySelector('#mySidepanel');
+    var opened = panel.classList.contains('opened')
+    var closed = panel.classList.contains('closed')
+    if (!opened && closed) {
+        panel.classList.remove('closed');
+        panel.classList.add('opened');
+    } else if (!opened && !closed) {
+        panel.classList.add('opened');
+    }
+}
+
+// Opens sidepanel at the beginning
+openSidePanelIfClosed();
+
+// Returns the default map center
 export function getDefaultMapCenter() {
     return [41.721700, 44.799748];
 }
