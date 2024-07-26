@@ -36,17 +36,17 @@ async function createRoute(routeId) {
         element.members.forEach(async (member) => {
             // Gathers route relation's ways and combine them in an one polyline
             if (member.type == 'way') {
-                route.addLayer(L.polyline(member.geometry, { color: 'red' }));
+                route.addLayer(L.polyline(member.geometry, newRoute.polylineOptions));
             }
             // Gathers route relation nodes (stations) an creates circle markers witn tooltips
             else if (member.type == 'node') {
                 const query = `[out:json][timeout:25]; node(` + member.ref + `); out geom;`;
                 const stationData = await getOverpassData(query);
-                route.addLayer(L.circleMarker([member.lat, member.lon], { color: "red", radius: 10 }).bindTooltip(stationData.elements[0].tags["name:en"], {
+                route.addLayer(L.circleMarker([member.lat, member.lon], newRoute.cirkleMarkerOptions).bindTooltip(stationData.elements[0].tags["name:en"], {
                     permanent: true,
                     direction: 'bottom',
                     opacity: 0.9
-                }).openTooltip());
+                }));
             }
         })
     })
@@ -74,13 +74,12 @@ async function toggleRoute(routeId) {
         activeRoute.pop();
         activeRoute.push(route);
         route.show();
-        // No routes are shown (so it has to hide the railway network and show the route)
+        // No routes are shown (so it has to shadow the railway network and show the route)
     } else if (activeRoute.length == 0) {
         let newRoute = await getRoute(routeId);
+        railwayNetwork.shadow();
         await newRoute.show();
         activeRoute.push(newRoute);
-        railwayNetwork.hide();
-        newRoute.show();
     }
     // Current route is shown (so it has to hide the route and show the railway network)
     else {
