@@ -43,7 +43,7 @@ async function createRoute(routeId) {
                 const query = `[out:json][timeout:25]; node(` + member.ref + `); out geom;`;
                 const stationData = await getOverpassData(query);
                 route.addLayer(L.circleMarker([member.lat, member.lon], newRoute.cirkleMarkerOptions).bindTooltip(stationData.elements[0].tags["name:en"], {
-                    permanent: true,
+                    permanent: false,
                     direction: 'bottom',
                     opacity: 0.9
                 }));

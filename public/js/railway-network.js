@@ -9,7 +9,7 @@ export class RailwayNetwork {
         this.polylineOptions = {
             stroke: true,
             color: '#32373B',
-            weight: 4
+            weight: 3
         },
         this.polylineOptionsShadowed = {
             stroke: true,
