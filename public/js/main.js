@@ -42,7 +42,7 @@ async function createRoute(routeId) {
             else if (member.type == 'node') {
                 const query = `[out:json][timeout:25]; node(` + member.ref + `); out geom;`;
                 const stationData = await getOverpassData(query);
-                route.addLayer(L.circleMarker([member.lat, member.lon], newRoute.cirkleMarkerOptions).bindTooltip(stationData.elements[0].tags["name:en"], {
+                route.addLayer(L.circleMarker([member.lat, member.lon], newRoute.cirkleMarkerOptions).bindTooltip(getStationName(stationData), {
                     permanent: false,
                     direction: 'bottom',
                     opacity: 0.9
@@ -53,6 +53,22 @@ async function createRoute(routeId) {
     newRoute.setFeatureGroup(route);
     routes.push(newRoute);
     return newRoute
+}
+
+function getStationName(data) {
+    let stationName;
+    if ("tags" in data.elements[0]) {
+        if ("name:en" in data.elements[0].tags) {
+            stationName = data.elements[0].tags["name:en"];
+        } else if ("name" in data.elements[0].tags) {
+            stationName = data.elements[0].tags["name"];
+        } else {
+            stationName = "unknown station"
+        }
+    } else {
+        stationName = "unknown station"
+    }
+    return stationName
 }
 
 // Returns a new route or existing one 

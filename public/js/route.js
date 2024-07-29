@@ -14,7 +14,7 @@ export class Route {
         };
         this.cirkleMarkerOptions = {
             color: "#CA0C02",
-            radius: 7,
+            radius: 6,
             weight: 2,
             fill: true,
             fillColor: '#fff',
