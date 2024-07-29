@@ -5,7 +5,20 @@ export const routesList = [
       "name:ka": "ოზურგეთი → თბილისი",
       "name:en": "Ozurgeti → Tbilisi",
       "name:ru": "Озургети → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "ozurgeti",
+            "role": "start",
+            "time": "08:55"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "17:17"
+         }
+      ]
    },
    {
       "id": "15683825",
@@ -13,7 +26,20 @@ export const routesList = [
       "name:ka": "თბილისი → ოზურგეთი",
       "name:en": "Tbilisi → Ozurgeti",
       "name:ru": "Тбилиси → Озургети",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "08:45"
+         },
+         {
+            "name": "ozurgeti",
+            "role": "end",
+            "time": "17:24"
+         }
+      ]
    },
    {
       "id": "16236589",
@@ -21,7 +47,20 @@ export const routesList = [
       "name:ka": "ქუთაისი → თბილისი",
       "name:en": "Kutaisi → Tbilisi",
       "name:ru": "Кутаиси → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "kutaisi",
+            "role": "start",
+            "time": "11:55"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "17:17"
+         }
+      ]
    },
    {
       "id": "16236590",
@@ -29,7 +68,20 @@ export const routesList = [
       "name:ka": "თბილისი → ქუთაისი",
       "name:en": "Tbilisi → Kutaisi",
       "name:ru": "Тбилиси → Кутаиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "08:45"
+         },
+         {
+            "name": "kutaisi",
+            "role": "end",
+            "time": "14:35"
+         }
+      ]
    },
    {
       "id": "15675176",
@@ -37,7 +89,18 @@ export const routesList = [
       "name:ka": "ბათუმი → ოზურგეთი",
       "name:en": "Batumi → Ozurgeti",
       "name:ru": "Батуми → Озургети",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start"
+         },
+         {
+            "name": "ozurgeti",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "15675175",
@@ -45,7 +108,18 @@ export const routesList = [
       "name:ka": "ოზურგეთი → ბათუმი",
       "name:en": "Ozurgeti → Batumi",
       "name:ru": "Озургети → Батуми",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "ozurgeti",
+            "role": "start"
+         },
+         {
+            "name": "batumi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "15689521",
@@ -53,7 +127,18 @@ export const routesList = [
       "name:ka": "ბორჯომი → თბილისი",
       "name:en": "Borjomi → Tbilisi",
       "name:ru": "Боржоми → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "borjomi",
+            "role": "start"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "15689520",
@@ -61,7 +146,18 @@ export const routesList = [
       "name:ka": "თბილისი → ბორჯომი",
       "name:en": "Tbilisi → Borjomi",
       "name:ru": "Тбилиси → Боржоми",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start"
+         },
+         {
+            "name": "borjomi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16010991",
@@ -69,7 +165,18 @@ export const routesList = [
       "name:ka": "ქუთაისი → საჩხერე",
       "name:en": "Kutaisi → Sachkhere",
       "name:ru": "Кутаиси → Сачхере",
-      "category": "kutaisi"
+      "category": "kutaisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "kutaisi",
+            "role": "start"
+         },
+         {
+            "name": "sachkhere",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16010994",
@@ -77,7 +184,18 @@ export const routesList = [
       "name:ka": "საჩხერე → ქუთაისი",
       "name:en": "Sachkhere → Kutaisi",
       "name:ru": "Сачхере → Кутаиси",
-      "category": "kutaisi"
+      "category": "kutaisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "sachkhere",
+            "role": "start"
+         },
+         {
+            "name": "kutaisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16010993",
@@ -85,7 +203,18 @@ export const routesList = [
       "name:ka": "ქუთაისი → საჩხერე",
       "name:en": "Kutaisi → Sachkhere",
       "name:ru": "Кутаиси → Сачхере",
-      "category": "kutaisi"
+      "category": "kutaisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "kutaisi",
+            "role": "start"
+         },
+         {
+            "name": "sachkhere",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16010992",
@@ -93,7 +222,18 @@ export const routesList = [
       "name:ka": "საჩხერე → ქუთაისი",
       "name:en": "Sachkhere → Kutaisi",
       "name:ru": "Сачхере → Кутаиси",
-      "category": "kutaisi"
+      "category": "kutaisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "sachkhere",
+            "role": "start"
+         },
+         {
+            "name": "kutaisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "14631215",
@@ -101,7 +241,18 @@ export const routesList = [
       "name:ka": "ბათუმი → ქუთაისი",
       "name:en": "Batumi → Kutaisi",
       "name:ru": "Батуми → Кутаиси",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start"
+         },
+         {
+            "name": "kutaisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "14631214",
@@ -109,7 +260,18 @@ export const routesList = [
       "name:ka": "ქუთაისი → ბათუმი",
       "name:en": "Kutaisi → Batumi",
       "name:ru": "Кутаиси → Батуми",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "kutaisi",
+            "role": "start"
+         },
+         {
+            "name": "batumi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "14631216",
@@ -117,7 +279,18 @@ export const routesList = [
       "name:ka": "ბათუმი → ქუთაისი",
       "name:en": "Batumi → Kutaisi",
       "name:ru": "Батуми → Кутаиси",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start"
+         },
+         {
+            "name": "kutaisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "14630243",
@@ -125,7 +298,18 @@ export const routesList = [
       "name:ka": "მატარებელი №684: ქუთაისი → ბათუმი",
       "name:en": "Kutaisi → Batumi",
       "name:ru": "Кутаиси → Батуми",
-      "category": "batumi"
+      "category": "batumi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "kutaisi",
+            "role": "start"
+         },
+         {
+            "name": "batumi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "15689522",
@@ -133,7 +317,18 @@ export const routesList = [
       "name:ka": "ბორჯომი → თბილისი",
       "name:en": "Borjomi → Tbilisi",
       "name:ru": "Боржоми → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "borjomi",
+            "role": "start"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "1198501",
@@ -141,7 +336,18 @@ export const routesList = [
       "name:ka": "თბილისი → ბორჯომი",
       "name:en": "Tbilisi → Borjomi",
       "name:ru": "Тбилиси → Боржоми",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start"
+         },
+         {
+            "name": "borjomi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "14669018",
@@ -153,19 +359,14 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "Batumi",
-            "time": "18:30",
-            "role": "start"
+            "name": "batumi",
+            "role": "start",
+            "time": "18:30"
          },
          {
-            "name": "Tbilisi",
-            "time": "23:31",
-            "role": "end"
-         },
-         {
-            "name": "Kobuleti",
-            "time": "18:50",
-            "role": "middle"
+            "name": "tbilisi",
+            "role": "end",
+            "time": "23:31"
          }
       ]
    },
@@ -175,7 +376,20 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "category": "stadler"
+      "category": "stadler",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "08:00"
+         },
+         {
+            "name": "batumi",
+            "role": "end",
+            "time": "13:08"
+         }
+      ]
    },
    {
       "id": "14669017",
@@ -183,7 +397,20 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "category": "stadler"
+      "category": "stadler",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start",
+            "time": "08:10"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "13:11"
+         }
+      ]
    },
    {
       "id": "14669014",
@@ -191,7 +418,20 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "category": "stadler"
+      "category": "stadler",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "17:05"
+         },
+         {
+            "name": "batumi",
+            "role": "end",
+            "time": "22:13"
+         }
+      ]
    },
    {
       "id": "14669016",
@@ -199,7 +439,20 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "category": "stadler"
+      "category": "stadler",
+      "frequency": "daily, 15 July – 31 August",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start",
+            "time": "17:20"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "22:21"
+         }
+      ]
    },
    {
       "id": "14669013",
@@ -207,7 +460,20 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "category": "stadler"
+      "category": "stadler",
+      "frequency": "daily, 15 July – 31 August",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "10:25"
+         },
+         {
+            "name": "batumi",
+            "role": "end",
+            "time": "15:33"
+         }
+      ]
    },
    {
       "id": "15667577",
@@ -215,7 +481,20 @@ export const routesList = [
       "name:ka": "ზუგდიდი → თბილისი",
       "name:en": "Zugdidi → Tbilisi",
       "name:ru": "Зугдиди → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "zugdidi",
+            "role": "start",
+            "time": "17:20"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "23:20"
+         }
+      ]
    },
    {
       "id": "6409429",
@@ -223,7 +502,20 @@ export const routesList = [
       "name:ka": "თბილისი → ზუგდიდი",
       "name:en": "Tbilisi → Zugdidi",
       "name:ru": "Тбилиси → Зугдиди",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "08:20"
+         },
+         {
+            "name": "zugdidi",
+            "role": "end",
+            "time": "14:21"
+         }
+      ]
    },
    {
       "id": "15683666",
@@ -231,7 +523,20 @@ export const routesList = [
       "name:ka": "მატარებელი №873: ფოთი → თბილისი",
       "name:en": "Poti → Tbilisi",
       "name:ru": "Поти → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "poti",
+            "role": "start",
+            "time": "07:20"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "13:00"
+         }
+      ]
    },
    {
       "id": "15683667",
@@ -239,7 +544,20 @@ export const routesList = [
       "name:ka": "თბილისი → ფოთი",
       "name:en": "Tbilisi → Poti",
       "name:ru": "Тбилиси → Поти",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "17:25"
+         },
+         {
+            "name": "poti",
+            "role": "end",
+            "time": "23:11"
+         }
+      ]
    },
    {
       "id": "16011187",
@@ -247,7 +565,18 @@ export const routesList = [
       "name:ka": "თბილისი → გარდაბანი",
       "name:en": "Tbilisi → Gardabani",
       "name:ru": "Тбилиси → Гардабани",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start"
+         },
+         {
+            "name": "gardabani",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16011099",
@@ -255,7 +584,18 @@ export const routesList = [
       "name:ka": "გარდაბანი → თბილისი",
       "name:en": "Gardabani → Tbilisi",
       "name:ru": "Гардабани → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "gardabani",
+            "role": "start"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16011186",
@@ -263,7 +603,18 @@ export const routesList = [
       "name:ka": "თბილისი → გარდაბანი",
       "name:en": "Tbilisi → Gardabani",
       "name:ru": "Тбилиси → Гардабани",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start"
+         },
+         {
+            "name": "gardabani",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16011098",
@@ -271,7 +622,18 @@ export const routesList = [
       "name:ka": "გარდაბანი → თბილისი",
       "name:en": "Gardabani → Tbilisi",
       "name:ru": "Гардабани → Тбилиси",
-      "category": "tbilisi"
+      "category": "tbilisi",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "gardabani",
+            "role": "start"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16024301",
@@ -279,7 +641,18 @@ export const routesList = [
       "name:ka": "ზესტაფონი → ხაშური",
       "name:en": "Zestafoni → Khashuri",
       "name:ru": "Зестафони → Хашури",
-      "category": "zestafoni"
+      "category": "zestafoni",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "zestafoni",
+            "role": "start"
+         },
+         {
+            "name": "khashuri",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16024299",
@@ -287,7 +660,18 @@ export const routesList = [
       "name:ka": "ხაშური → ზესტაფონი",
       "name:en": "Khashuri → Zestafoni",
       "name:ru": "Хашури → Зестафони",
-      "category": "zestafoni"
+      "category": "zestafoni",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "khashuri",
+            "role": "start"
+         },
+         {
+            "name": "zestafoni",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16024298",
@@ -295,7 +679,18 @@ export const routesList = [
       "name:ka": "ხაშური → ზესტაფონი",
       "name:en": "Khashuri → Zestafoni",
       "name:ru": "Хашури → Зестафони",
-      "category": "zestafoni"
+      "category": "zestafoni",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "khashuri",
+            "role": "start"
+         },
+         {
+            "name": "zestafoni",
+            "role": "end"
+         }
+      ]
    },
    {
       "id": "16024300",
@@ -303,6 +698,17 @@ export const routesList = [
       "name:ka": "ზესტაფონი → ხაშური",
       "name:en": "Zestafoni → Khashuri",
       "name:ru": "Зестафони → Хашури",
-      "category": "zestafoni"
+      "category": "zestafoni",
+      "frequency": "daily",
+      "stations": [
+         {
+            "name": "zestafoni",
+            "role": "start"
+         },
+         {
+            "name": "khashuri",
+            "role": "end"
+         }
+      ]
    }
 ]
