@@ -32,24 +32,35 @@ async function createRoute(routeId) {
     const b = routeData.elements[0].bounds;
     newRoute.setBounds(L.latLngBounds([b.minlat - 1, b.minlon], [b.maxlat + 1, b.maxlon + 1])); // Corrections are for better pan with an opened sidepanel
 
-    routeData.elements.forEach(element => {
+    routeData.elements.forEach(async (element) => {
+        let stations = [];
         element.members.forEach(async (member) => {
             // Gathers route relation's ways and combine them in an one polyline
             if (member.type == 'way') {
                 route.addLayer(L.polyline(member.geometry, newRoute.polylineOptions));
             }
-            // Gathers route relation nodes (stations) an creates circle markers witn tooltips
+            // Gathers route relation nodes (stations)
             else if (member.type == 'node') {
-                const query = `[out:json][timeout:25]; node(` + member.ref + `); out geom;`;
-                const stationData = await getOverpassData(query);
-                route.addLayer(L.circleMarker([member.lat, member.lon], newRoute.cirkleMarkerOptions).bindTooltip(getStationName(stationData), {
-                    permanent: false,
-                    direction: 'bottom',
-                    opacity: 0.9
-                }));
+                stations.push(member.ref);
             }
+        });
+        // Combines overpass query to gather all the stations data
+        let query = "[out:json][timeout:25];(";
+        stations.forEach(station => {
+            query += "node(" + station + ");"
+        });
+        query += ");out geom;"
+        // Runs overpass query
+        const stationData = await getOverpassData(query);
+        // Creates all the station markers
+        stationData.elements.forEach(element => {
+            route.addLayer(L.circleMarker([element.lat, element.lon], newRoute.cirkleMarkerOptions).bindTooltip(getStationName(element), {
+                permanent: false,
+                direction: 'bottom',
+                opacity: 0.9
+            }));
         })
-    })
+    });
     newRoute.setFeatureGroup(route);
     routes.push(newRoute);
     return newRoute
@@ -57,11 +68,11 @@ async function createRoute(routeId) {
 
 function getStationName(data) {
     let stationName;
-    if ("tags" in data.elements[0]) {
-        if ("name:en" in data.elements[0].tags) {
-            stationName = data.elements[0].tags["name:en"];
-        } else if ("name" in data.elements[0].tags) {
-            stationName = data.elements[0].tags["name"];
+    if ("tags" in data) {
+        if ("name:en" in data.tags) {
+            stationName = data.tags["name:en"];
+        } else if ("name" in data.tags) {
+            stationName = data.tags["name"];
         } else {
             stationName = "unknown station"
         }
