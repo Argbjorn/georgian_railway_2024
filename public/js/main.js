@@ -206,7 +206,7 @@ function makeRoutesList(routesList) {
     // Creates route categories
     for(let i = 0; i < categories.length; i++) {
         let listContainer = document.createElement('div');
-        let categoryHeader = document.createElement('p');
+        let categoryHeader = document.createElement('h3');
         let listElement = document.createElement('ul');
 
         parentContainer.appendChild(listContainer);
