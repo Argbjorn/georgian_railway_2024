@@ -105,6 +105,65 @@ async function toggleRoute(routeId) {
     }
 }
 
+function getRouteSchedule(route) {
+    let start, end;
+    if ("stations" in route) {
+        route.stations.forEach(station => {
+            if ("role" in station && station.role == "start") {
+                start = station.time;
+            } else if ("role" in station && station.role == "end") {
+                end = station.time;
+            }
+        })
+    }
+    let result = []
+    if (start != null) {
+        result.push(start)
+    } else {
+        result.push("0")
+    }
+    if (end != null) {
+        result.push(end)
+    } else {
+        result.push("0")
+    }
+    if("frequency" in route) {
+        result.push(route.frequency)
+    } else {
+        result.push("0")
+    }
+
+    return result
+}
+
+function createRouteTimingString(routeTiming) {
+    let str = String();
+    const spacer = "\xa0\xa0\xa0\xa0\xa0";
+    const arrow = " → ";
+    if(routeTiming[0] != "0") {
+        str += routeTiming[0]
+    } else {
+        str += spacer
+    }
+    str += " → "
+    if(routeTiming[1] != "0") {
+        str += routeTiming[1]
+    } else {
+        str += spacer
+    }
+    if (str == spacer + arrow + spacer) {
+        return "There is no schedule data yet"
+    } else {
+        if(routeTiming[2] != "0") {
+            str += spacer + routeTiming[2];
+            return str
+        }
+        return str
+        
+    }
+    
+}
+
 // Show railway network
 export let railwayNetwork = new RailwayNetwork();
 railwayNetwork.show();
@@ -112,16 +171,24 @@ railwayNetwork.show();
 makeRoutesList(routesList);
 
 // Adds event listeners to routes links
-    const routeLinks = document.querySelectorAll('.route-link');
-    routeLinks.forEach(element => {
-        element.addEventListener('click', async () => {
-            routeLinks.forEach(link => {
-                if (link != element) {
-                    link.classList.remove('active');
+    const routeListItems = document.querySelectorAll('.route-list-item');
+    routeListItems.forEach(element => {
+        let routeLink = element.querySelector(".route-link");
+        routeLink.addEventListener('click', async () => {
+            let routeDetails = element.querySelector('.route-details');
+            // Closes all other routes
+            routeListItems.forEach(listItem => {
+                let otherRouteLink = listItem.querySelector(".route-link");
+                let otherRouteDetails = listItem.querySelector(".route-details");
+                if (otherRouteLink != routeLink) {
+                    otherRouteLink.classList.remove('active');
+                    otherRouteDetails.classList.remove('active');
+
                 }
             })
-            element.classList.toggle('active');
-            await toggleRoute(element.getAttribute('id')).then();
+            routeLink.classList.toggle('active');
+            routeDetails.classList.toggle('active');
+            await toggleRoute(routeLink.getAttribute('id')).then();
         })
     })
 
@@ -154,6 +221,7 @@ function makeRoutesList(routesList) {
     routesList.forEach((item) => {
         // Creates list item
         let listItem = document.createElement('li');
+        listItem.classList.add('route-list-item');
 
         // Creates route link
         let routeLink = document.createElement('a');
@@ -164,15 +232,26 @@ function makeRoutesList(routesList) {
         let routeReference = document.createElement('span');
         routeReference.classList.add('route-label');
 
+        // Creates div for details
+        let routeDetails = document.createElement('div');
+        routeDetails.classList.add('route-details');
+
+        // Creates span for main timing
+        let routeTiming = document.createElement('span');
+        routeTiming.classList.add("route-timing");
+
         // Combine all the components
         let listElement = document.querySelector('#' + item.category);
         listElement.appendChild(listItem);
         listItem.appendChild(routeLink);
+        listItem.appendChild(routeDetails);
         routeLink.appendChild(routeReference);
+        routeDetails.appendChild(routeTiming);
 
         // Add texts
         routeReference.innerHTML += item.ref;
         routeLink.innerHTML += item["name:en"];
+        routeTiming.innerHTML += createRouteTimingString(getRouteSchedule(item));
     })
 }
 

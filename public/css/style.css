@@ -35,3 +35,12 @@ ul {
     cursor: pointer;
     font-weight: 700;
 }
+
+.route-details {
+    margin-left: 21px;
+    display: none;
+}
+
+.route-details.active {
+    display: block;
+}
