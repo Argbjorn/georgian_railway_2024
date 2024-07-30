@@ -434,6 +434,48 @@ export const routesList = [
       ]
    },
    {
+      "id": "17890099",
+      "ref": "805",
+      "name:ka": "ბათუმი → თბილისი",
+      "name:en": "Batumi → Tbilisi",
+      "name:ru": "Батуми → Тбилиси",
+      "category": "stadler",
+      "frequency": "daily, 15 July – 25 August",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start",
+            "time": "14:20"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "19:28"
+         }
+      ]
+   },
+   {
+      "id": "17890097",
+      "ref": "806",
+      "name:ka": "თბილისი → ბათუმი",
+      "name:en": "Tbilisi → Batumi",
+      "name:ru": "Тбилиси → Батуми",
+      "category": "stadler",
+      "frequency": "daily, 15 July – 25 August",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "06:30"
+         },
+         {
+            "name": "batumi",
+            "role": "end",
+            "time": "11:38\t"
+         }
+      ]
+   },
+   {
       "id": "14669016",
       "ref": "807",
       "name:ka": "ბათუმი → თბილისი",
@@ -472,6 +514,48 @@ export const routesList = [
             "name": "batumi",
             "role": "end",
             "time": "15:33"
+         }
+      ]
+   },
+   {
+      "id": "17890098",
+      "ref": "811",
+      "name:ka": "ბათუმი → თბილისი",
+      "name:en": "Batumi → Tbilisi",
+      "name:ru": "Батуми → Тбилиси",
+      "category": "stadler",
+      "frequency": "daily, 15 July – 31 July",
+      "stations": [
+         {
+            "name": "batumi",
+            "role": "start",
+            "time": "00:40"
+         },
+         {
+            "name": "tbilisi",
+            "role": "end",
+            "time": "05:41"
+         }
+      ]
+   },
+   {
+      "id": "17890096",
+      "ref": "812",
+      "name:ka": "თბილისი → ბათუმი",
+      "name:en": "Tbilisi → Batumi",
+      "name:ru": "Тбилиси → Батуми",
+      "category": "stadler",
+      "frequency": "daily, 15 July – 31 July",
+      "stations": [
+         {
+            "name": "tbilisi",
+            "role": "start",
+            "time": "00:30"
+         },
+         {
+            "name": "batumi",
+            "role": "end",
+            "time": "05:38"
          }
       ]
    },
