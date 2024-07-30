@@ -94,11 +94,13 @@ export const routesList = [
       "stations": [
          {
             "name": "batumi",
-            "role": "start"
+            "role": "start",
+            "time": "21:35"
          },
          {
             "name": "ozurgeti",
-            "role": "end"
+            "role": "end",
+            "time": "23:55"
          }
       ]
    },
@@ -113,11 +115,13 @@ export const routesList = [
       "stations": [
          {
             "name": "ozurgeti",
-            "role": "start"
+            "role": "start",
+            "time": "6:00"
          },
          {
             "name": "batumi",
-            "role": "end"
+            "role": "end",
+            "time": "8:07"
          }
       ]
    },
@@ -132,11 +136,13 @@ export const routesList = [
       "stations": [
          {
             "name": "borjomi",
-            "role": "start"
+            "role": "start",
+            "time": "16:35"
          },
          {
             "name": "tbilisi",
-            "role": "end"
+            "role": "end",
+            "time": "21:01"
          }
       ]
    },
@@ -151,11 +157,13 @@ export const routesList = [
       "stations": [
          {
             "name": "tbilisi",
-            "role": "start"
+            "role": "start",
+            "time": "6:35"
          },
          {
             "name": "borjomi",
-            "role": "end"
+            "role": "end",
+            "time": "10:51"
          }
       ]
    },
@@ -170,11 +178,13 @@ export const routesList = [
       "stations": [
          {
             "name": "kutaisi",
-            "role": "start"
+            "role": "start",
+            "time": "6:05"
          },
          {
             "name": "sachkhere",
-            "role": "end"
+            "role": "end",
+            "time": "9:27"
          }
       ]
    },
@@ -189,11 +199,13 @@ export const routesList = [
       "stations": [
          {
             "name": "sachkhere",
-            "role": "start"
+            "role": "start",
+            "time": "10:10"
          },
          {
             "name": "kutaisi",
-            "role": "end"
+            "role": "end",
+            "time": "13:35"
          }
       ]
    },
@@ -246,11 +258,13 @@ export const routesList = [
       "stations": [
          {
             "name": "batumi",
-            "role": "start"
+            "role": "start",
+            "time": "19:15"
          },
          {
             "name": "kutaisi",
-            "role": "end"
+            "role": "end",
+            "time": "23:32"
          }
       ]
    },
@@ -265,11 +279,13 @@ export const routesList = [
       "stations": [
          {
             "name": "kutaisi",
-            "role": "start"
+            "role": "start",
+            "time": "5:40"
          },
          {
             "name": "batumi",
-            "role": "end"
+            "role": "end",
+            "time": "10:02"
          }
       ]
    },
@@ -284,11 +300,13 @@ export const routesList = [
       "stations": [
          {
             "name": "batumi",
-            "role": "start"
+            "role": "start",
+            "time": "8:25"
          },
          {
             "name": "kutaisi",
-            "role": "end"
+            "role": "end",
+            "time": "12:37"
          }
       ]
    },
@@ -303,11 +321,13 @@ export const routesList = [
       "stations": [
          {
             "name": "kutaisi",
-            "role": "start"
+            "role": "start",
+            "time": "16:45"
          },
          {
             "name": "batumi",
-            "role": "end"
+            "role": "end",
+            "time": "20:55"
          }
       ]
    },
@@ -322,11 +342,13 @@ export const routesList = [
       "stations": [
          {
             "name": "borjomi",
-            "role": "start"
+            "role": "start",
+            "time": "5:50"
          },
          {
             "name": "tbilisi",
-            "role": "end"
+            "role": "end",
+            "time": "10:16"
          }
       ]
    },
@@ -341,11 +363,13 @@ export const routesList = [
       "stations": [
          {
             "name": "tbilisi",
-            "role": "start"
+            "role": "start",
+            "time": "18:35"
          },
          {
             "name": "borjomi",
-            "role": "end"
+            "role": "end",
+            "time": "22:53"
          }
       ]
    },
@@ -654,11 +678,13 @@ export const routesList = [
       "stations": [
          {
             "name": "tbilisi",
-            "role": "start"
+            "role": "start",
+            "time": "7:10"
          },
          {
             "name": "gardabani",
-            "role": "end"
+            "role": "end",
+            "time": "8:13"
          }
       ]
    },
@@ -673,11 +699,13 @@ export const routesList = [
       "stations": [
          {
             "name": "gardabani",
-            "role": "start"
+            "role": "start",
+            "time": "8:25"
          },
          {
             "name": "tbilisi",
-            "role": "end"
+            "role": "end",
+            "time": "9:32"
          }
       ]
    },
@@ -692,11 +720,13 @@ export const routesList = [
       "stations": [
          {
             "name": "tbilisi",
-            "role": "start"
+            "role": "start",
+            "time": "19:00"
          },
          {
             "name": "gardabani",
-            "role": "end"
+            "role": "end",
+            "time": "20:05"
          }
       ]
    },
@@ -711,11 +741,13 @@ export const routesList = [
       "stations": [
          {
             "name": "gardabani",
-            "role": "start"
+            "role": "start",
+            "time": "20:20"
          },
          {
             "name": "tbilisi",
-            "role": "end"
+            "role": "end",
+            "time": "21:26"
          }
       ]
    },
@@ -730,11 +762,13 @@ export const routesList = [
       "stations": [
          {
             "name": "zestafoni",
-            "role": "start"
+            "role": "start",
+            "time": "6:50"
          },
          {
             "name": "khashuri",
-            "role": "end"
+            "role": "end",
+            "time": "8:57"
          }
       ]
    },
@@ -749,11 +783,13 @@ export const routesList = [
       "stations": [
          {
             "name": "khashuri",
-            "role": "start"
+            "role": "start",
+            "time": "17:05"
          },
          {
             "name": "zestafoni",
-            "role": "end"
+            "role": "end",
+            "time": "19:16"
          }
       ]
    },
@@ -768,11 +804,13 @@ export const routesList = [
       "stations": [
          {
             "name": "khashuri",
-            "role": "start"
+            "role": "start",
+            "time": "6:40"
          },
          {
             "name": "zestafoni",
-            "role": "end"
+            "role": "end",
+            "time": "8:51"
          }
       ]
    },
@@ -787,11 +825,13 @@ export const routesList = [
       "stations": [
          {
             "name": "zestafoni",
-            "role": "start"
+            "role": "start",
+            "time": "17:15"
          },
          {
             "name": "khashuri",
-            "role": "end"
+            "role": "end",
+            "time": "19:25"
          }
       ]
    }
