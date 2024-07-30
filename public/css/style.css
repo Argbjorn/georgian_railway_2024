@@ -11,6 +11,10 @@ html, body, #map {
     font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+}
+
 li {
     margin-bottom: 5px;
 }

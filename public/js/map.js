@@ -59,4 +59,3 @@ openSidePanelIfClosed();
 export function getDefaultMapCenter() {
     return [41.721700, 44.799748];
 }
-

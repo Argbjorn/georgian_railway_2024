@@ -1,6 +1,8 @@
 import { RailwayNetwork } from "./railway-network.js";
 import { Route } from "./route.js";
 import { routesList } from "./routes-list.js";
+import { map } from "./map.js";
+import { Station } from "./station.js";
 
 // Create a global storage for an active route
 let activeRoute = [];
@@ -138,7 +140,7 @@ function getRouteSchedule(route) {
     } else {
         result.push("0")
     }
-    if("frequency" in route) {
+    if ("frequency" in route) {
         result.push(route.frequency)
     } else {
         result.push("0")
@@ -151,13 +153,13 @@ function createRouteTimingString(routeTiming) {
     let str = String();
     const spacer = "\xa0\xa0\xa0\xa0\xa0";
     const arrow = " → ";
-    if(routeTiming[0] != "0") {
+    if (routeTiming[0] != "0") {
         str += routeTiming[0]
     } else {
         str += spacer
     }
     str += " → "
-    if(routeTiming[1] != "0") {
+    if (routeTiming[1] != "0") {
         str += routeTiming[1]
     } else {
         str += spacer
@@ -165,14 +167,14 @@ function createRouteTimingString(routeTiming) {
     if (str == spacer + arrow + spacer) {
         return "There is no schedule data yet"
     } else {
-        if(routeTiming[2] != "0") {
+        if (routeTiming[2] != "0") {
             str += spacer + routeTiming[2];
             return str
         }
         return str
-        
+
     }
-    
+
 }
 
 // Show railway network
@@ -182,40 +184,40 @@ railwayNetwork.show();
 makeRoutesList(routesList);
 
 // Adds event listeners to routes links
-    const routeListItems = document.querySelectorAll('.route-list-item');
-    routeListItems.forEach(element => {
-        let routeLink = element.querySelector(".route-link");
-        routeLink.addEventListener('click', async () => {
-            let routeDetails = element.querySelector('.route-details');
-            // Closes all other routes
-            routeListItems.forEach(listItem => {
-                let otherRouteLink = listItem.querySelector(".route-link");
-                let otherRouteDetails = listItem.querySelector(".route-details");
-                if (otherRouteLink != routeLink) {
-                    otherRouteLink.classList.remove('active');
-                    otherRouteDetails.classList.remove('active');
+const routeListItems = document.querySelectorAll('.route-list-item');
+routeListItems.forEach(element => {
+    let routeLink = element.querySelector(".route-link");
+    routeLink.addEventListener('click', async () => {
+        let routeDetails = element.querySelector('.route-details');
+        // Closes all other routes
+        routeListItems.forEach(listItem => {
+            let otherRouteLink = listItem.querySelector(".route-link");
+            let otherRouteDetails = listItem.querySelector(".route-details");
+            if (otherRouteLink != routeLink) {
+                otherRouteLink.classList.remove('active');
+                otherRouteDetails.classList.remove('active');
 
-                }
-            })
-            routeLink.classList.toggle('active');
-            routeDetails.classList.toggle('active');
-            await toggleRoute(routeLink.getAttribute('id')).then();
+            }
         })
+        routeLink.classList.toggle('active');
+        routeDetails.classList.toggle('active');
+        await toggleRoute(routeLink.getAttribute('id')).then();
     })
+})
 
 function makeRoutesList(routesList) {
     const categories = [["Tbilisi ←→ Batumi (Stadler)", "stadler"],
-        ["From/To Tbilisi", "tbilisi"],
-        ["From/To Batumi", "batumi"],
-        ["From/To Kutaisi", "kutaisi"],
-        ["From/To Zestafoni", "zestafoni"]
+    ["From/To Tbilisi", "tbilisi"],
+    ["From/To Batumi", "batumi"],
+    ["From/To Kutaisi", "kutaisi"],
+    ["From/To Zestafoni", "zestafoni"]
     ]
 
     // Creates the main container for the whole routes list
     let parentContainer = document.querySelector(".sidepanel-routes-content");
 
     // Creates route categories
-    for(let i = 0; i < categories.length; i++) {
+    for (let i = 0; i < categories.length; i++) {
         let listContainer = document.createElement('div');
         let categoryHeader = document.createElement('h3');
         let listElement = document.createElement('ul');
@@ -227,7 +229,7 @@ function makeRoutesList(routesList) {
         categoryHeader.innerHTML += categories[i][0];
         listContainer.setAttribute("id", categories[i][1]);
     }
-    
+
     // Add routes to categories
     routesList.forEach((item) => {
         // Creates list item
@@ -266,3 +268,7 @@ function makeRoutesList(routesList) {
     })
 }
 
+// Adds stations
+let marker1 = new Station('kutaisi').show();
+let marker2 = new Station('tbilisi').show();
+let marker3 = new Station('batumi').show();
