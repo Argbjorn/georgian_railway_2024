@@ -19,6 +19,13 @@ ul {
     padding-left: 20px;
 }
 
+.last-update {
+    text-align: right;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0px;
+}
+
 .route-label {
     border: 1px solid black;
     border-radius: 4px;
