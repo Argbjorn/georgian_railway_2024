@@ -272,7 +272,7 @@ function makeRoutesList(routesList) {
 // Adds stations
 stations.forEach(station => {
     let newStation = new Station(station.name_en, station.coords, station.type)
-    newStation.showDefault();
-    newStation.markerDefault.on('click', ev => {newStation.showActive()});
-    newStation.markerActive.on('click', ev => {newStation.showDefault()});
+    newStation.setDefault();
+    newStation.markerDefault.on('click', ev => {newStation.setActive()});
+    newStation.markerActive.on('click', ev => {newStation.setDefault()});
 })

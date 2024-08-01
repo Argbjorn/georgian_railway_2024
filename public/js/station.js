@@ -54,23 +54,18 @@ export class Station {
         });
     }
 
-    showDefault() {
+    setDefault() {
         this.markerDefault.addTo(map);
         this.markerDefault.bindTooltip(this.name);
     }
 
-    showActive() {
+    setActive() {
         this.markerDefault.remove();
         this.markerActive.addTo(map);
     }
 
-    hideDefault() {
+    hide() {
         this.markerDefault.remove();
-    }
-
-    setEvent() {
-        this.markerDefault.on('click', function(ev) {
-            ev.sourceTarget.showActive();
-        })
+        this.markerActive.remove();
     }
 }
