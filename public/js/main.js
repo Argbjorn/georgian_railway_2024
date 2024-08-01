@@ -3,6 +3,7 @@ import { Route } from "./route.js";
 import { routesList } from "./routes-list.js";
 import { map } from "./map.js";
 import { Station } from "./station.js";
+import { stations } from "./stations-list.js";
 
 // Create a global storage for an active route
 let activeRoute = [];
@@ -269,6 +270,8 @@ function makeRoutesList(routesList) {
 }
 
 // Adds stations
-let marker1 = new Station('kutaisi').show();
-let marker2 = new Station('tbilisi').show();
-let marker3 = new Station('batumi').show();
+stations.forEach(station => {
+    let newStation = new Station(station.name_en, station.coords, station.type)
+    newStation.showDefault();
+    newStation.setEvent();
+})

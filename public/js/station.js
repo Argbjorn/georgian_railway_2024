@@ -1,33 +1,76 @@
 import { map } from "./map.js";
 
-const stations = {
-    kutaisi: {
-        name_en: "Kutaisi",
-        coords: [42.2613497, 42.7130275]
+const options = {
+    mainDefault: {
+        icon: 'circle-o',
+        iconShape: 'marker',
+        borderColor: "#c1121f",
+        textColor: "#c1121f"
     },
-    tbilisi: {
-        name_en: "Tbilisi",
-        coords: [41.7211251, 44.7998129]
+    mainActive: {
+        icon: 'circle-o',
+        iconShape: 'marker',
+        borderColor: "#c1121f",
+        textColor: "#fff",
+        backgroundColor: "#c1121f"
     },
-    batumi: {
-        name_en: "Batumi",
-        coords: [41.6585300, 41.6777291]
+    secondaryDefault: {
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#c1121f",
+        iconSize: [15, 15],
+        isAlphaNumericIcon: true,
+        text: ''
+    },
+    secondaryActive: {
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#c1121f",
+        iconSize: [15, 15],
+        isAlphaNumericIcon: true,
+        text: '',
+        backgroundColor: "#c1121f"
     }
 }
 
 export class Station {
-    constructor(name) {
-        this.name = name;
-        this.marker = L.marker(stations[name].coords);
-        this.markerOptions = {
-            icon: 'circle-o',
-            iconShape: 'marker',
-            borderColor: "#c1121f",
-            textColor: "#c1121f"
+    constructor(name, coords, type) {
+        this.name = name,
+        this.coords = coords,
+        this.type = type;
+
+        if (this.type == "main") {
+            this.BeautifyIconOptionsDefault = options.mainDefault;
+            this.BeautifyIconOptionsActive = options.mainActive;
+        } else if (this.type == "secondary") {
+            this.BeautifyIconOptionsDefault = options.secondaryDefault;
+            this.BeautifyIconOptionsActive = options.secondaryActive;
         };
+        this.markerDefault = L.marker(this.coords, {
+            icon: L.BeautifyIcon.icon(this.BeautifyIconOptionsDefault)
+        });
+        this.markerActive = L.marker(this.coords, {
+            icon: L.BeautifyIcon.icon(this.BeautifyIconOptionsActive)
+        });
     }
 
-    show() {
-        this.marker.addTo(map);
+    showDefault() {
+        this.markerDefault.addTo(map);
+        this.markerDefault.bindTooltip(this.name);
+    }
+
+    showActive() {
+        this.markerDefault.remove();
+        this.markerActive.addTo(map);
+    }
+
+    hideDefault() {
+        this.markerDefault.remove();
+    }
+
+    setEvent() {
+        this.markerDefault.on('click', function(ev) {
+            ev.sourceTarget.showActive();
+        })
     }
 }
