@@ -40,7 +40,7 @@ const panelRight = L.control.sidepanel('mySidepanel', {
 }).addTo(map);
 
 // Opens sidepanel
-function openSidePanelIfClosed() {
+export function openSidePanelIfClosed() {
     const panel = document.querySelector('#mySidepanel');
     var opened = panel.classList.contains('opened')
     var closed = panel.classList.contains('closed')

@@ -4,6 +4,7 @@ import { routesList } from "./routes-list.js";
 import { map } from "./map.js";
 import { Station } from "./station.js";
 import { stations } from "./stations-list.js";
+import { openSidePanelIfClosed } from "./map.js";
 
 // Create a global storage for an active route
 let activeRoute = [];
@@ -273,6 +274,31 @@ function makeRoutesList(routesList) {
 stations.forEach(station => {
     let newStation = new Station(station.name_en, station.coords, station.type)
     newStation.setDefault();
-    newStation.markerDefault.on('click', ev => {newStation.setActive()});
-    newStation.markerActive.on('click', ev => {newStation.setDefault()});
+    newStation.markerDefault.on('click', ev => {
+        newStation.setActive();
+        renderStationInfo(newStation);
+    });
+    newStation.markerActive.on('click', ev => {
+        newStation.setDefault();
+        closeSidepanel();
+    });
 })
+
+function openSidepanelTab(tab){
+    openSidePanelIfClosed();
+    document.querySelectorAll('.sidepanel-tab-content').forEach(tab => {tab.classList.remove('active')});
+    document.querySelectorAll('.sidebar-tab-link').forEach(tab => {tab.classList.remove('active')});
+    document.querySelector('[data-tab-content="' + tab + '"]').classList.add('active');
+    document.querySelector('[data-tab-link="' + tab + '"]').classList.add('active');
+}
+
+function closeSidepanel(){
+    const panel = document.querySelector('#mySidepanel');
+    panel.classList.remove('opened');
+    panel.classList.add('closed');
+}
+
+function renderStationInfo(station) {
+    document.querySelector(".station-info").innerHTML = station.name;
+    openSidepanelTab('tab-3');
+}
