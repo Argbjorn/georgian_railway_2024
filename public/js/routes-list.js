@@ -116,12 +116,12 @@ export const routesList = [
          {
             "name": "ozurgeti",
             "role": "start",
-            "time": "6:00"
+            "time": "06:00"
          },
          {
             "name": "batumi",
             "role": "end",
-            "time": "8:07"
+            "time": "08:07"
          }
       ]
    },
@@ -158,7 +158,7 @@ export const routesList = [
          {
             "name": "tbilisi",
             "role": "start",
-            "time": "6:35"
+            "time": "06:35"
          },
          {
             "name": "borjomi",
@@ -179,12 +179,12 @@ export const routesList = [
          {
             "name": "kutaisi",
             "role": "start",
-            "time": "6:05"
+            "time": "06:05"
          },
          {
             "name": "sachkhere",
             "role": "end",
-            "time": "9:27"
+            "time": "09:27"
          }
       ]
    },
@@ -206,44 +206,6 @@ export const routesList = [
             "name": "kutaisi",
             "role": "end",
             "time": "13:35"
-         }
-      ]
-   },
-   {
-      "id": "16010993",
-      "ref": "635",
-      "name:ka": "ქუთაისი → საჩხერე",
-      "name:en": "Kutaisi → Sachkhere",
-      "name:ru": "Кутаиси → Сачхере",
-      "category": "kutaisi",
-      "frequency": "daily",
-      "stations": [
-         {
-            "name": "kutaisi",
-            "role": "start"
-         },
-         {
-            "name": "sachkhere",
-            "role": "end"
-         }
-      ]
-   },
-   {
-      "id": "16010992",
-      "ref": "636",
-      "name:ka": "საჩხერე → ქუთაისი",
-      "name:en": "Sachkhere → Kutaisi",
-      "name:ru": "Сачхере → Кутаиси",
-      "category": "kutaisi",
-      "frequency": "daily",
-      "stations": [
-         {
-            "name": "sachkhere",
-            "role": "start"
-         },
-         {
-            "name": "kutaisi",
-            "role": "end"
          }
       ]
    },
@@ -301,7 +263,7 @@ export const routesList = [
          {
             "name": "batumi",
             "role": "start",
-            "time": "8:25"
+            "time": "08:25"
          },
          {
             "name": "kutaisi",
@@ -495,7 +457,7 @@ export const routesList = [
          {
             "name": "batumi",
             "role": "end",
-            "time": "11:38\t"
+            "time": "11:38"
          }
       ]
    },
@@ -679,12 +641,12 @@ export const routesList = [
          {
             "name": "tbilisi",
             "role": "start",
-            "time": "7:10"
+            "time": "07:10"
          },
          {
             "name": "gardabani",
             "role": "end",
-            "time": "8:13"
+            "time": "08:13"
          }
       ]
    },
@@ -700,12 +662,12 @@ export const routesList = [
          {
             "name": "gardabani",
             "role": "start",
-            "time": "8:25"
+            "time": "08:25"
          },
          {
             "name": "tbilisi",
             "role": "end",
-            "time": "9:32"
+            "time": "09:32"
          }
       ]
    },
@@ -763,12 +725,12 @@ export const routesList = [
          {
             "name": "zestafoni",
             "role": "start",
-            "time": "6:50"
+            "time": "06:50"
          },
          {
             "name": "khashuri",
             "role": "end",
-            "time": "8:57"
+            "time": "08:57"
          }
       ]
    },
@@ -805,12 +767,12 @@ export const routesList = [
          {
             "name": "khashuri",
             "role": "start",
-            "time": "6:40"
+            "time": "06:40"
          },
          {
             "name": "zestafoni",
             "role": "end",
-            "time": "8:51"
+            "time": "08:51"
          }
       ]
    },

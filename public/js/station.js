@@ -18,15 +18,15 @@ const options = {
         iconShape: 'circle',
         borderColor: "#c1121f",
         textColor: "#c1121f",
-        iconSize: [15, 15],
+        iconSize: [18, 18],
         isAlphaNumericIcon: true,
         text: ''
     },
     secondaryActive: {
         iconShape: 'circle',
-        borderColor: "#c1121f",
+        borderColor: "#fff",
         textColor: "#c1121f",
-        iconSize: [15, 15],
+        iconSize: [18, 18],
         isAlphaNumericIcon: true,
         text: '',
         backgroundColor: "#c1121f"
@@ -34,10 +34,11 @@ const options = {
 }
 
 export class Station {
-    constructor(name, coords, type) {
-        this.name = name,
+    constructor(name_en, coords, type, code) {
+        this.name_en = name_en,
         this.coords = coords,
         this.type = type;
+        this.code = code;
 
         if (this.type == "main") {
             this.BeautifyIconOptionsDefault = options.mainDefault;
@@ -56,7 +57,7 @@ export class Station {
 
     setDefault() {
         this.markerDefault.addTo(map);
-        this.markerDefault.bindTooltip(this.name);
+        this.markerDefault.bindTooltip(this.name_en);
     }
 
     setActive() {

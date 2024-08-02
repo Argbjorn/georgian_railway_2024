@@ -23,6 +23,10 @@ ul {
     padding-left: 20px;
 }
 
+.disclaimer {
+    font-size: 12px;
+}
+
 .last-update {
     text-align: right;
     font-weight: 300;
@@ -36,6 +40,10 @@ ul {
     margin-right: 5px;
     padding-left: 2px;
     padding-right: 2px;
+}
+
+.route-line {
+    margin-bottom: 5px;
 }
 
 .route-link {
@@ -54,4 +62,8 @@ ul {
 
 .route-details.active {
     display: block;
+}
+
+.route-time {
+    padding-right: 5px;
 }

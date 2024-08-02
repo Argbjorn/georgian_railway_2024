@@ -3,7 +3,7 @@ import { Route } from "./route.js";
 import { routesList } from "./routes-list.js";
 import { map } from "./map.js";
 import { Station } from "./station.js";
-import { stations } from "./stations-list.js";
+import { stations as stationsList } from "./stations-list.js";
 import { openSidePanelIfClosed } from "./map.js";
 
 // Create a global storage for an active route
@@ -11,6 +11,12 @@ let activeRoute = [];
 
 // Create a global storage for all created routes
 let routes = [];
+
+// Create a global storage for an active station
+let activeStation = [];
+
+// Create a global storage for all stations
+let stations = [];
 
 // Returns JSON with overpass-turbo data
 export async function getOverpassData(query) {
@@ -109,12 +115,24 @@ async function toggleRoute(routeId) {
     } else if (activeRoute.length == 0) {
         let newRoute = await getRoute(routeId);
         railwayNetwork.shadow();
+        stations.forEach(station => {
+            station.hide();
+        });
+        if (activeStation.length > 0) {
+            activeStation[0].setActive();
+        }
         await newRoute.show();
         activeRoute.push(newRoute);
     }
     // Current route is shown (so it has to hide the route and show the railway network)
     else {
         activeRoute[0].hide();
+        stations.forEach(station => {
+            station.setDefault();
+        });
+        if (activeStation.length > 0) {
+            activeStation[0].setActive();
+        }
         activeRoute.pop();
         railwayNetwork.show();
     }
@@ -221,7 +239,7 @@ function makeRoutesList(routesList) {
     // Creates route categories
     for (let i = 0; i < categories.length; i++) {
         let listContainer = document.createElement('div');
-        let categoryHeader = document.createElement('h3');
+        let categoryHeader = document.createElement('h4');
         let listElement = document.createElement('ul');
 
         parentContainer.appendChild(listContainer);
@@ -270,35 +288,198 @@ function makeRoutesList(routesList) {
     })
 }
 
-// Adds stations
-stations.forEach(station => {
-    let newStation = new Station(station.name_en, station.coords, station.type)
-    newStation.setDefault();
-    newStation.markerDefault.on('click', ev => {
-        newStation.setActive();
-        renderStationInfo(newStation);
-    });
-    newStation.markerActive.on('click', ev => {
-        newStation.setDefault();
-        closeSidepanel();
-    });
-})
-
-function openSidepanelTab(tab){
+function openSidepanelTab(tab) {
     openSidePanelIfClosed();
-    document.querySelectorAll('.sidepanel-tab-content').forEach(tab => {tab.classList.remove('active')});
-    document.querySelectorAll('.sidebar-tab-link').forEach(tab => {tab.classList.remove('active')});
+    document.querySelectorAll('.sidepanel-tab-content').forEach(tab => { tab.classList.remove('active') });
+    document.querySelectorAll('.sidebar-tab-link').forEach(tab => { tab.classList.remove('active') });
     document.querySelector('[data-tab-content="' + tab + '"]').classList.add('active');
     document.querySelector('[data-tab-link="' + tab + '"]').classList.add('active');
 }
 
-function closeSidepanel(){
+function closeSidepanel() {
     const panel = document.querySelector('#mySidepanel');
     panel.classList.remove('opened');
     panel.classList.add('closed');
 }
 
-function renderStationInfo(station) {
-    document.querySelector(".station-info").innerHTML = station.name;
-    openSidepanelTab('tab-3');
+function getRoutesByStation(routesList, stationCode) {
+    let routes = [];
+    routesList.forEach(route => {
+        if ("stations" in route) {
+            route.stations.forEach(station => {
+                if (station.name == stationCode) {
+                    routes.push(route);
+                }
+            })
+        }
+    })
+    return routes;
+}
+
+async function renderStationInfo(station) {
+    let parentContainer = document.querySelector(".sidepanel-stations-content");
+    parentContainer.innerHTML = '';
+
+    let stationHeader = document.createElement('h2');
+    let stationDescription = document.createElement('p');
+    let stationArrivals = document.createElement('div');
+    let stationDepartures = document.createElement('div');
+
+    parentContainer.appendChild(stationHeader);
+    parentContainer.appendChild(stationDescription);
+    parentContainer.appendChild(stationArrivals);
+    parentContainer.appendChild(stationDepartures);
+
+    stationHeader.innerHTML = station.name_en;
+
+    if (station.description) {
+        stationDescription.innerHTML = station.description;
+    } else {
+        stationDescription.innerHTML = "";
+    }
+
+    stationArrivals.innerHTML = '<h4>Arrivals</h4>';
+    stationDepartures.innerHTML = '<h4>Departures</h4>';
+
+    let stationRoutes = getRoutesByStation(routesList, station.code);
+
+    if (stationRoutes.length > 0) {
+        let arrivals = [];
+        let departures = [];
+        stationRoutes.forEach(route => {
+            let routeLine;
+            if (station.code == getRouteEndpoints(route)[0]) {
+                routeLine = createRouteLine(route, station.code, "departure");
+                departures.push(routeLine);
+            } else if (station.code == getRouteEndpoints(route)[1]) {
+                routeLine = createRouteLine(route, station.code, "arrival");
+                arrivals.push(routeLine);
+            }
+            if (routeLine != undefined) {
+                routeLine.html.addEventListener('click', async () => {
+                    await toggleRoute(route.id);
+                    let routeLink = routeLine.html.querySelector('.route-link');
+                    let routeLinks = document.querySelectorAll('.route-link');
+                    routeLinks.forEach(link => {
+                        if(link != routeLink) {
+                            link.classList.remove('active');
+                        }
+                    })
+                    routeLink.classList.toggle('active');
+                })
+            }
+
+        })
+        let arrivalsSorted = arrivals.sort((a, b) => a.time > b.time ? 1 : -1);
+        let departuresSorted = departures.sort((a, b) => a.time > b.time ? 1 : -1);
+        arrivalsSorted.forEach(a => {
+            stationArrivals.appendChild(a.html);
+        });
+        departuresSorted.forEach(a => {
+            stationDepartures.appendChild(a.html);
+        })
+    } else {
+        stationDepartures.innerHTML += '<p>There is no schedule yet</p>';
+        stationArrivals.innerHTML += '<p>There is no schedule yet</p>'
+    }
+}
+
+// Shows stations
+stationsList.forEach(station => {
+    let newStation = new Station(station.name_en, station.coords, station.type, station.code);
+    stations.push(newStation);
+    newStation.setDefault();
+    newStation.markerDefault.on('click', ev => {
+        stations.forEach(station => {
+            station.setDefault();
+        })
+        newStation.setActive();
+        activeStation.pop();
+        activeStation.push(newStation);
+        renderStationInfo(newStation);
+        openSidepanelTab('tab-3');
+    });
+    newStation.markerActive.on('click', ev => {
+        newStation.setDefault();
+        activeStation.pop();
+        if (activeRoute.length > 0) {
+            toggleRoute(activeRoute[0].id);
+            railwayNetwork.show();
+        };
+        closeSidepanel();
+    });
+})
+
+function createRouteLine(route, stationCode, direction) {
+    let routeLine = document.createElement('div');
+    let routeLink = document.createElement('a');
+    let routeTime = document.createElement('span');
+    let routeLabel = document.createElement('span');
+    let routeDestination = document.createElement('span');
+    let routeFrequency = document.createElement('span');
+
+    routeLine.appendChild(routeTime);
+    routeLine.appendChild(routeLink);
+    routeLink.appendChild(routeLabel);
+    routeLink.appendChild(routeDestination);
+    routeLine.appendChild(routeFrequency);
+
+    routeLine.classList.add('route-line');
+    routeLink.classList.add('route-link');
+    routeTime.classList.add('route-time');
+    routeLabel.classList.add('route-label');
+    routeDestination.classList.add('route-destination');
+    routeFrequency.classList.add('route-frequency');
+
+    routeLink.setAttribute('id', route.id);
+
+    let time = getRouteTimeByStation(route, stationCode);
+
+    routeTime.innerHTML = time + ' ';
+    routeLabel.innerHTML = route.ref;
+    routeFrequency.innerHTML = route.frequency;
+
+    let destination;
+
+    if (direction == "departure") {
+        destination = getRouteEndpoints(route)[1]
+    } else if (direction == "arrival") {
+        destination = getRouteEndpoints(route)[0]
+    }
+
+    routeDestination.innerHTML = getStationNameByCode(destination) + ' ';
+
+    return {html: routeLine, time: Date.parse('1970-01-01T' + time)};
+}
+
+function getRouteEndpoints(route) {
+    let start, end;
+    route.stations.forEach(station => {
+        if (station.role == "start") {
+            start = station.name;
+        } else if (station.role == "end") {
+            end = station.name;
+        }
+    })
+    return [start, end]
+}
+
+function getStationNameByCode(stationCode) {
+    let stationName;
+    stationsList.forEach(station => {
+        if (station.code == stationCode) {
+            stationName = station.name_en;
+        }
+    })
+    return stationName;
+}
+
+function getRouteTimeByStation(route, stationCode) {
+    let routeTime;
+    route.stations.forEach(station => {
+        if (station.name == stationCode) {
+            routeTime = station.time;
+        }
+    })
+    return routeTime;
 }
