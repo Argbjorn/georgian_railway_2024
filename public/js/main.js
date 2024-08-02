@@ -397,7 +397,7 @@ stationsList.forEach(station => {
         activeStation.pop();
         activeStation.push(newStation);
         renderStationInfo(newStation);
-        openSidepanelTab('tab-3');
+        openSidepanelTab('tab-2');
     });
     newStation.markerActive.on('click', ev => {
         newStation.setDefault();
