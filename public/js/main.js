@@ -1,22 +1,16 @@
 import { RailwayNetwork } from "./railway-network.js";
 import { Route } from "./route.js";
 import { routesList } from "./routes-list.js";
-import { map } from "./map.js";
 import { Station } from "./station.js";
 import { stations as stationsList } from "./stations-list.js";
 import { openSidePanelIfClosed } from "./map.js";
 
-// Create a global storage for an active route
 let activeRoute = [];
-
-// Create a global storage for all created routes
 let routes = [];
-
-// Create a global storage for an active station
 let activeStation = [];
-
-// Create a global storage for all stations
 let stations = [];
+
+// Getting data
 
 // Returns JSON with overpass-turbo data
 export async function getOverpassData(query) {
@@ -31,6 +25,8 @@ export async function getOverpassData(query) {
     )
     return result;
 }
+
+// Map layers
 
 // Creates a route
 async function createRoute(routeId) {
@@ -74,22 +70,6 @@ async function createRoute(routeId) {
     newRoute.setFeatureGroup(route);
     routes.push(newRoute);
     return newRoute
-}
-
-function getStationName(data) {
-    let stationName;
-    if ("tags" in data) {
-        if ("name:en" in data.tags) {
-            stationName = data.tags["name:en"];
-        } else if ("name" in data.tags) {
-            stationName = data.tags["name"];
-        } else {
-            stationName = "unknown station"
-        }
-    } else {
-        stationName = "unknown station"
-    }
-    return stationName
 }
 
 // Returns a new route or existing one 
@@ -138,6 +118,54 @@ async function toggleRoute(routeId) {
     }
 }
 
+// Shows stations and sets station markers interaction
+function showStations() {
+    stationsList.forEach(station => {
+        let newStation = new Station(station.name_en, station.coords, station.type, station.code);
+        stations.push(newStation);
+        newStation.setDefault();
+        newStation.markerDefault.on('click', ev => {
+            stations.forEach(station => {
+                station.setDefault();
+            })
+            newStation.setActive();
+            activeStation.pop();
+            activeStation.push(newStation);
+            renderStationInfo(newStation);
+            openSidepanelTab('tab-2');
+        });
+        newStation.markerActive.on('click', ev => {
+            newStation.setDefault();
+            activeStation.pop();
+            if (activeRoute.length > 0) {
+                toggleRoute(activeRoute[0].id);
+                railwayNetwork.show();
+            };
+            closeSidepanel();
+        });
+    })
+}
+
+// Handling with routes data
+
+// Returns the station name from raw overpass data, if exists
+function getStationName(data) {
+    let stationName;
+    if ("tags" in data) {
+        if ("name:en" in data.tags) {
+            stationName = data.tags["name:en"];
+        } else if ("name" in data.tags) {
+            stationName = data.tags["name"];
+        } else {
+            stationName = "unknown station"
+        }
+    } else {
+        stationName = "unknown station"
+    }
+    return stationName
+}
+
+// Returns an array with a given route departure time, arrival time and frequency like ['17:05', '22:13', 'daily']
 function getRouteSchedule(route) {
     let start, end;
     if ("stations" in route) {
@@ -165,10 +193,10 @@ function getRouteSchedule(route) {
     } else {
         result.push("0")
     }
-
     return result
 }
 
+// Returns a schedule string like '17:05 → 22:13     daily' for a route 
 function createRouteTimingString(routeTiming) {
     let str = String();
     const spacer = "\xa0\xa0\xa0\xa0\xa0";
@@ -192,39 +220,47 @@ function createRouteTimingString(routeTiming) {
             return str
         }
         return str
-
     }
-
 }
 
-// Show railway network
-export let railwayNetwork = new RailwayNetwork();
-railwayNetwork.show();
-
-makeRoutesList(routesList);
-
-// Adds event listeners to routes links
-const routeListItems = document.querySelectorAll('.route-list-item');
-routeListItems.forEach(element => {
-    let routeLink = element.querySelector(".route-link");
-    routeLink.addEventListener('click', async () => {
-        let routeDetails = element.querySelector('.route-details');
-        // Closes all other routes
-        routeListItems.forEach(listItem => {
-            let otherRouteLink = listItem.querySelector(".route-link");
-            let otherRouteDetails = listItem.querySelector(".route-details");
-            if (otherRouteLink != routeLink) {
-                otherRouteLink.classList.remove('active');
-                otherRouteDetails.classList.remove('active');
-
-            }
-        })
-        routeLink.classList.toggle('active');
-        routeDetails.classList.toggle('active');
-        await toggleRoute(routeLink.getAttribute('id')).then();
+// Return the first and the last station of a given route
+function getRouteEndpoints(route) {
+    let start, end;
+    route.stations.forEach(station => {
+        if (station.role == "start") {
+            start = station.name;
+        } else if (station.role == "end") {
+            end = station.name;
+        }
     })
-})
+    return [start, end]
+}
 
+// Returns a name of given station by code
+function getStationNameByCode(stationCode) {
+    let stationName;
+    stationsList.forEach(station => {
+        if (station.code == stationCode) {
+            stationName = station.name_en;
+        }
+    })
+    return stationName;
+}
+
+// Returns time of given route of given station by code
+function getRouteTimeByStation(route, stationCode) {
+    let routeTime;
+    route.stations.forEach(station => {
+        if (station.name == stationCode) {
+            routeTime = station.time;
+        }
+    })
+    return routeTime;
+}
+
+// Sidepanel content
+
+// Renders all routes list for main tab
 function makeRoutesList(routesList) {
     const categories = [["Tbilisi ←→ Batumi (Stadler)", "stadler"],
     ["From/To Tbilisi", "tbilisi"],
@@ -288,34 +324,30 @@ function makeRoutesList(routesList) {
     })
 }
 
-function openSidepanelTab(tab) {
-    openSidePanelIfClosed();
-    document.querySelectorAll('.sidepanel-tab-content').forEach(tab => { tab.classList.remove('active') });
-    document.querySelectorAll('.sidebar-tab-link').forEach(tab => { tab.classList.remove('active') });
-    document.querySelector('[data-tab-content="' + tab + '"]').classList.add('active');
-    document.querySelector('[data-tab-link="' + tab + '"]').classList.add('active');
-}
-
-function closeSidepanel() {
-    const panel = document.querySelector('#mySidepanel');
-    panel.classList.remove('opened');
-    panel.classList.add('closed');
-}
-
-function getRoutesByStation(routesList, stationCode) {
-    let routes = [];
-    routesList.forEach(route => {
-        if ("stations" in route) {
-            route.stations.forEach(station => {
-                if (station.name == stationCode) {
-                    routes.push(route);
+// Adds event listeners to routes links
+function addRoutesLinksEvents() {
+    const routeListItems = document.querySelectorAll('.route-list-item');
+    routeListItems.forEach(element => {
+        let routeLink = element.querySelector(".route-link");
+        routeLink.addEventListener('click', async () => {
+            let routeDetails = element.querySelector('.route-details');
+            // Closes all other routes
+            routeListItems.forEach(listItem => {
+                let otherRouteLink = listItem.querySelector(".route-link");
+                let otherRouteDetails = listItem.querySelector(".route-details");
+                if (otherRouteLink != routeLink) {
+                    otherRouteLink.classList.remove('active');
+                    otherRouteDetails.classList.remove('active');
                 }
             })
-        }
+            routeLink.classList.toggle('active');
+            routeDetails.classList.toggle('active');
+            await toggleRoute(routeLink.getAttribute('id')).then();
+        })
     })
-    return routes;
 }
 
+// Creates the full info for the sidepanel about given station: headers, description, arrivals and departures list
 async function renderStationInfo(station) {
     let parentContainer = document.querySelector(".sidepanel-stations-content");
     parentContainer.innerHTML = '';
@@ -341,7 +373,7 @@ async function renderStationInfo(station) {
     stationArrivals.innerHTML = '<h4>Arrivals</h4>';
     stationDepartures.innerHTML = '<h4>Departures</h4>';
 
-    let stationRoutes = getRoutesByStation(routesList, station.code);
+    let stationRoutes = getRoutesByStation(station.code);
 
     if (stationRoutes.length > 0) {
         let arrivals = [];
@@ -349,10 +381,10 @@ async function renderStationInfo(station) {
         stationRoutes.forEach(route => {
             let routeLine;
             if (station.code == getRouteEndpoints(route)[0]) {
-                routeLine = createRouteLine(route, station.code, "departure");
+                routeLine = makeRouteLine(route, station.code, "departure");
                 departures.push(routeLine);
             } else if (station.code == getRouteEndpoints(route)[1]) {
-                routeLine = createRouteLine(route, station.code, "arrival");
+                routeLine = makeRouteLine(route, station.code, "arrival");
                 arrivals.push(routeLine);
             }
             if (routeLine != undefined) {
@@ -361,7 +393,7 @@ async function renderStationInfo(station) {
                     let routeLink = routeLine.html.querySelector('.route-link');
                     let routeLinks = document.querySelectorAll('.route-link');
                     routeLinks.forEach(link => {
-                        if(link != routeLink) {
+                        if (link != routeLink) {
                             link.classList.remove('active');
                         }
                     })
@@ -384,33 +416,8 @@ async function renderStationInfo(station) {
     }
 }
 
-// Shows stations
-stationsList.forEach(station => {
-    let newStation = new Station(station.name_en, station.coords, station.type, station.code);
-    stations.push(newStation);
-    newStation.setDefault();
-    newStation.markerDefault.on('click', ev => {
-        stations.forEach(station => {
-            station.setDefault();
-        })
-        newStation.setActive();
-        activeStation.pop();
-        activeStation.push(newStation);
-        renderStationInfo(newStation);
-        openSidepanelTab('tab-2');
-    });
-    newStation.markerActive.on('click', ev => {
-        newStation.setDefault();
-        activeStation.pop();
-        if (activeRoute.length > 0) {
-            toggleRoute(activeRoute[0].id);
-            railwayNetwork.show();
-        };
-        closeSidepanel();
-    });
-})
-
-function createRouteLine(route, stationCode, direction) {
+// Creates html container for given route for given station
+function makeRouteLine(route, stationCode, direction) {
     let routeLine = document.createElement('div');
     let routeLink = document.createElement('a');
     let routeTime = document.createElement('span');
@@ -449,37 +456,46 @@ function createRouteLine(route, stationCode, direction) {
 
     routeDestination.innerHTML = getStationNameByCode(destination) + ' ';
 
-    return {html: routeLine, time: Date.parse('1970-01-01T' + time)};
+    return { html: routeLine, time: Date.parse('1970-01-01T' + time) };
 }
 
-function getRouteEndpoints(route) {
-    let start, end;
-    route.stations.forEach(station => {
-        if (station.role == "start") {
-            start = station.name;
-        } else if (station.role == "end") {
-            end = station.name;
-        }
-    })
-    return [start, end]
+// Sidepanel interactions
+
+// Opens given sidepanel tab
+function openSidepanelTab(tab) {
+    openSidePanelIfClosed();
+    document.querySelectorAll('.sidepanel-tab-content').forEach(tab => { tab.classList.remove('active') });
+    document.querySelectorAll('.sidebar-tab-link').forEach(tab => { tab.classList.remove('active') });
+    document.querySelector('[data-tab-content="' + tab + '"]').classList.add('active');
+    document.querySelector('[data-tab-link="' + tab + '"]').classList.add('active');
 }
 
-function getStationNameByCode(stationCode) {
-    let stationName;
-    stationsList.forEach(station => {
-        if (station.code == stationCode) {
-            stationName = station.name_en;
-        }
-    })
-    return stationName;
+// Closes sidepanel
+function closeSidepanel() {
+    const panel = document.querySelector('#mySidepanel');
+    panel.classList.remove('opened');
+    panel.classList.add('closed');
 }
 
-function getRouteTimeByStation(route, stationCode) {
-    let routeTime;
-    route.stations.forEach(station => {
-        if (station.name == stationCode) {
-            routeTime = station.time;
+// Returns routes data connected to given station
+function getRoutesByStation(stationCode) {
+    let routes = [];
+    routesList.forEach(route => {
+        if ("stations" in route) {
+            route.stations.forEach(station => {
+                if (station.name == stationCode) {
+                    routes.push(route);
+                }
+            })
         }
     })
-    return routeTime;
+    return routes;
 }
+
+// Show railway network
+export let railwayNetwork = new RailwayNetwork();
+railwayNetwork.show();
+
+makeRoutesList(routesList);
+addRoutesLinksEvents();
+showStations();
