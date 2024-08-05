@@ -426,7 +426,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "category": "stadler",
-      "frequency": "daily, 15 July – 25 August",
+      "frequency": "daily, 15.07. – 25.08",
       "stations": [
          {
             "code": "batumi",
@@ -447,7 +447,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "category": "stadler",
-      "frequency": "daily, 15 July – 25 August",
+      "frequency": "daily, 15.07. – 25.08",
       "stations": [
          {
             "code": "tbilisi",
@@ -468,7 +468,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "category": "stadler",
-      "frequency": "daily, 15 July – 31 August",
+      "frequency": "daily, 15.07. – 31.08",
       "stations": [
          {
             "code": "batumi",
@@ -489,7 +489,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "category": "stadler",
-      "frequency": "daily, 15 July – 31 August",
+      "frequency": "daily, 15.07. – 31.08",
       "stations": [
          {
             "code": "tbilisi",
@@ -510,7 +510,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "category": "stadler",
-      "frequency": "daily, 15 July – 31 July",
+      "frequency": "daily, 15.07. – 31.07",
       "stations": [
          {
             "code": "batumi",
@@ -531,7 +531,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "category": "stadler",
-      "frequency": "daily, 15 July – 31 July",
+      "frequency": "daily, 15.07. – 31.07",
       "stations": [
          {
             "code": "tbilisi",

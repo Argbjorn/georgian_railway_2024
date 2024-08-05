@@ -124,23 +124,39 @@ function showStations() {
         let newStation = new Station(station.name_en, station.coords, station.type, station.code);
         stations.push(newStation);
         newStation.setDefault();
-        newStation.markerDefault.on('click', ev => {
+        newStation.markerDefault.on('click', () => {
             stations.forEach(station => {
                 station.setDefault();
             })
             newStation.setActive();
             activeStation.pop();
             activeStation.push(newStation);
+            closeAllStationLines();
+            openStationLine(station.code);
+            openSidepanelTab('tab-1');
         });
-        newStation.markerActive.on('click', ev => {
+        newStation.markerActive.addEventListener('click', () => {
             newStation.setDefault();
             activeStation.pop();
             if (activeRoute.length > 0) {
                 toggleRoute(activeRoute[0].id);
                 railwayNetwork.show();
             };
+            closeAllStationLines();
+            closeRoutes();
+            closeSidepanel();
         });
     })
+}
+
+function hideActiveRoute() {
+    activeRoute[0].hide();
+    activeRoute.pop();
+    railwayNetwork.show();
+    stations.forEach(station => {
+        station.setDefault();
+    });
+    closeRoutes();
 }
 
 // Handling with routes data
@@ -278,6 +294,13 @@ async function makeStationInfo(station) {
     stationDescription.classList.add('station-description');
     stationDepartures.classList.add('station-routes-list');
     stationArrivals.classList.add('station-routes-list');
+    parentContainer.setAttribute('id', station.code);
+
+    stationHeader.addEventListener('click', () => {
+        if(activeRoute.length > 0) {
+            hideActiveRoute();
+        }
+    })
 
     stationHeader.innerHTML = station.name_en;
 
@@ -409,6 +432,34 @@ function getRoutesByStation(stationCode) {
         }
     })
     return routes;
+}
+
+// Closes all station lines
+function closeAllStationLines() {
+    let stationLines = document.querySelectorAll('.station');
+    stationLines.forEach(stationLine => {
+        stationLine.open = false;
+    })
+}
+
+// Opens given station line
+function openStationLine(stationCode) {
+    let stationLine = document.querySelector('#' + stationCode);
+    stationLine.open = true;
+    stationLine.scrollIntoView(true, {behavior: 'smooth'});
+}
+
+// Closes route details in the sidepanel
+function closeRoutes() {
+    let routesLinks = document.querySelectorAll('.route-link');
+    let routesSchedules = document.querySelectorAll('.route-schedule');
+
+    routesLinks.forEach(route => {
+        route.classList.remove('active');
+    });
+    routesSchedules.forEach(schedule => {
+        schedule.classList.remove('active');
+    })
 }
 
 // Show railway network
