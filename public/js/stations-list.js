@@ -1,11 +1,5 @@
 export const stations = [
     {
-        name_en: "Kutaisi Airport",
-        coords: [42.1897882, 42.4885450],
-        type: "main",
-        code: "kutaisiairport"
-    },
-    {
         name_en: "Tbilisi",
         coords: [41.7211251, 44.7998129],
         type: "main",
@@ -18,52 +12,28 @@ export const stations = [
         code: "batumi"
     },
     {
-        name_en: "Kutaisi-1",
-        coords: [42.2613497, 42.7129589],
-        type: "secondary",
-        code: "kutaisi"
+        name_en: "Kutaisi Airport",
+        coords: [42.1897882, 42.4885450],
+        type: "main",
+        code: "kutaisiairport"
     },
     {
-        name_en: "Poti",
-        coords: [42.1507501, 41.6791564],
+        name_en: "Borjomi-Parki",
+        coords: [41.8416339, 43.3851332],
         type: "secondary",
-        code: "poti"
-    },
-    {
-        name_en: "Kobuleti",
-        coords: [41.8102269, 41.7809772],
-        type: "secondary",
-        code: "kobuleti"
-    },
-    {
-        name_en: "Ureki",
-        coords: [41.9978600, 41.7798188],
-        type: "secondary",
-        code: "ureki"
-    },
-    {
-        name_en: "Samtredia-1",
-        coords: [42.1610797, 42.3434386],
-        type: "secondary",
-        code: "samtredia"
-    },
-    {
-        name_en: "Zestafoni",
-        coords: [42.1079107, 43.0390960],
-        type: "secondary",
-        code: "zestafoni"
-    },
-    {
-        name_en: "Sachkhere",
-        coords: [42.3350273, 43.3996142],
-        type: "secondary",
-        code: "sachkhere"
+        code: "borjomi"
     },
     {
         name_en: "Chiatura",
         coords: [42.2870977, 43.2834489],
         type: "secondary",
         code: "chiatura"
+    },
+    {
+        name_en: "Gardabani",
+        coords: [41.4753867, 45.0979632],
+        type: "secondary",
+        code: "gardabani"
     },
     {
         name_en: "Gori",
@@ -78,16 +48,16 @@ export const stations = [
         code: "khashuri"
     },
     {
-        name_en: "Gardabani",
-        coords: [41.4753867, 45.0979632],
+        name_en: "Kobuleti",
+        coords: [41.8102269, 41.7809772],
         type: "secondary",
-        code: "gardabani"
+        code: "kobuleti"
     },
     {
-        name_en: "Borjomi-Parki",
-        coords: [41.8416339, 43.3851332],
+        name_en: "Kutaisi-1",
+        coords: [42.2613497, 42.7129589],
         type: "secondary",
-        code: "borjomi"
+        code: "kutaisi"
     },
     {
         name_en: "Ozurgeti",
@@ -96,10 +66,39 @@ export const stations = [
         code: "ozurgeti"
     },
     {
+        name_en: "Poti",
+        coords: [42.1507501, 41.6791564],
+        type: "secondary",
+        code: "poti"
+    },
+    {
+        name_en: "Sachkhere",
+        coords: [42.3350273, 43.3996142],
+        type: "secondary",
+        code: "sachkhere"
+    },
+    {
+        name_en: "Samtredia-1",
+        coords: [42.1610797, 42.3434386],
+        type: "secondary",
+        code: "samtredia"
+    },
+    {
+        name_en: "Ureki",
+        coords: [41.9978600, 41.7798188],
+        type: "secondary",
+        code: "ureki"
+    },
+    {
+        name_en: "Zestafoni",
+        coords: [42.1079107, 43.0390960],
+        type: "secondary",
+        code: "zestafoni"
+    },
+    {
         name_en: "Zugdidi",
         coords: [42.5104298, 41.8601887],
         type: "secondary",
         code: "zugdidi"
     }
-    
 ]

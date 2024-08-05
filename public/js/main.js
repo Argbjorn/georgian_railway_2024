@@ -131,8 +131,6 @@ function showStations() {
             newStation.setActive();
             activeStation.pop();
             activeStation.push(newStation);
-            renderStationInfo(newStation);
-            openSidepanelTab('tab-2');
         });
         newStation.markerActive.on('click', ev => {
             newStation.setDefault();
@@ -141,7 +139,6 @@ function showStations() {
                 toggleRoute(activeRoute[0].id);
                 railwayNetwork.show();
             };
-            closeSidepanel();
         });
     })
 }
@@ -165,62 +162,30 @@ function getStationName(data) {
     return stationName
 }
 
-// Returns an array with a given route departure time, arrival time and frequency like ['17:05', '22:13', 'daily']
+// Returns an array with a given route departure time and arrival time like ['17:05', '22:13']
 function getRouteSchedule(route) {
-    let start, end;
+    let departureTime, departureStation, arrivalTime, arrivalStation;
     if ("stations" in route) {
         route.stations.forEach(station => {
             if ("role" in station && station.role == "start") {
-                start = station.time;
+                departureTime = station.time;
+                departureStation = station.code;
             } else if ("role" in station && station.role == "end") {
-                end = station.time;
+                arrivalTime = station.time;
+                arrivalStation = station.code;
             }
         })
     }
-    let result = []
-    if (start != null) {
-        result.push(start)
+    if (isSet(departureTime) && isSet(departureStation) && isSet(arrivalTime) && isSet(arrivalStation)) {
+        return [[departureTime, departureStation], [arrivalTime, arrivalStation]]
     } else {
-        result.push("0")
+        return "There is no schedule for the route yet"
     }
-    if (end != null) {
-        result.push(end)
-    } else {
-        result.push("0")
-    }
-    if ("frequency" in route) {
-        result.push(route.frequency)
-    } else {
-        result.push("0")
-    }
-    return result
 }
 
 // Returns a schedule string like '17:05 → 22:13     daily' for a route 
-function createRouteTimingString(routeTiming) {
-    let str = String();
-    const spacer = "\xa0\xa0\xa0\xa0\xa0";
-    const arrow = " → ";
-    if (routeTiming[0] != "0") {
-        str += routeTiming[0]
-    } else {
-        str += spacer
-    }
-    str += " → "
-    if (routeTiming[1] != "0") {
-        str += routeTiming[1]
-    } else {
-        str += spacer
-    }
-    if (str == spacer + arrow + spacer) {
-        return "There is no schedule data yet"
-    } else {
-        if (routeTiming[2] != "0") {
-            str += spacer + routeTiming[2];
-            return str
-        }
-        return str
-    }
+function createRouteScheduleString(routeTiming) {
+    return routeTiming[0][0] + ' ' + getStationNameByCode(routeTiming[0][1]) + '<br>' + routeTiming[1][0] + ' ' + getStationNameByCode(routeTiming[1][1])
 }
 
 // Return the first and the last station of a given route
@@ -228,9 +193,9 @@ function getRouteEndpoints(route) {
     let start, end;
     route.stations.forEach(station => {
         if (station.role == "start") {
-            start = station.name;
+            start = station.code;
         } else if (station.role == "end") {
-            end = station.name;
+            end = station.code;
         }
     })
     return [start, end]
@@ -251,116 +216,68 @@ function getStationNameByCode(stationCode) {
 function getRouteTimeByStation(route, stationCode) {
     let routeTime;
     route.stations.forEach(station => {
-        if (station.name == stationCode) {
+        if (station.code == stationCode) {
             routeTime = station.time;
         }
     })
     return routeTime;
 }
 
-// Sidepanel content
-
-// Renders all routes list for main tab
-function makeRoutesList(routesList) {
-    const categories = [["Tbilisi ←→ Batumi (Stadler)", "stadler"],
-    ["From/To Tbilisi", "tbilisi"],
-    ["From/To Batumi", "batumi"],
-    ["From/To Kutaisi", "kutaisi"],
-    ["From/To Zestafoni", "zestafoni"]
-    ]
-
-    // Creates the main container for the whole routes list
-    let parentContainer = document.querySelector(".sidepanel-routes-content");
-
-    // Creates route categories
-    for (let i = 0; i < categories.length; i++) {
-        let listContainer = document.createElement('div');
-        let categoryHeader = document.createElement('h4');
-        let listElement = document.createElement('ul');
-
-        parentContainer.appendChild(listContainer);
-        listContainer.appendChild(categoryHeader);
-        listContainer.appendChild(listElement);
-
-        categoryHeader.innerHTML += categories[i][0];
-        listContainer.setAttribute("id", categories[i][1]);
+function isSet(s) {
+    if (typeof s === 'undefined') {
+        return false
     }
-
-    // Add routes to categories
-    routesList.forEach((item) => {
-        // Creates list item
-        let listItem = document.createElement('li');
-        listItem.classList.add('route-list-item');
-
-        // Creates route link
-        let routeLink = document.createElement('a');
-        routeLink.classList.add('route-link');
-        routeLink.setAttribute('id', item.id);
-
-        // Creates span for route reference
-        let routeReference = document.createElement('span');
-        routeReference.classList.add('route-label');
-
-        // Creates div for details
-        let routeDetails = document.createElement('div');
-        routeDetails.classList.add('route-details');
-
-        // Creates span for main timing
-        let routeTiming = document.createElement('span');
-        routeTiming.classList.add("route-timing");
-
-        // Combine all the components
-        let listElement = document.querySelector('#' + item.category);
-        listElement.appendChild(listItem);
-        listItem.appendChild(routeLink);
-        listItem.appendChild(routeDetails);
-        routeLink.appendChild(routeReference);
-        routeDetails.appendChild(routeTiming);
-
-        // Add texts
-        routeReference.innerHTML += item.ref;
-        routeLink.innerHTML += item["name:en"];
-        routeTiming.innerHTML += createRouteTimingString(getRouteSchedule(item));
-    })
+    return true
 }
+
+// Sidepanel content
 
 // Adds event listeners to routes links
 function addRoutesLinksEvents() {
-    const routeListItems = document.querySelectorAll('.route-list-item');
-    routeListItems.forEach(element => {
+    const routeLines = document.querySelectorAll('.route-line');
+    routeLines.forEach(element => {
         let routeLink = element.querySelector(".route-link");
         routeLink.addEventListener('click', async () => {
-            let routeDetails = element.querySelector('.route-details');
+            let routeSchedule = element.querySelector('.route-schedule');
             // Closes all other routes
-            routeListItems.forEach(listItem => {
+            routeLines.forEach(listItem => {
                 let otherRouteLink = listItem.querySelector(".route-link");
-                let otherRouteDetails = listItem.querySelector(".route-details");
+                let otherRouteSchedule = listItem.querySelector(".route-schedule");
                 if (otherRouteLink != routeLink) {
                     otherRouteLink.classList.remove('active');
-                    otherRouteDetails.classList.remove('active');
+                    otherRouteSchedule.classList.remove('active');
                 }
             })
             routeLink.classList.toggle('active');
-            routeDetails.classList.toggle('active');
+            routeSchedule.classList.toggle('active');
             await toggleRoute(routeLink.getAttribute('id')).then();
         })
     })
 }
 
 // Creates the full info for the sidepanel about given station: headers, description, arrivals and departures list
-async function renderStationInfo(station) {
-    let parentContainer = document.querySelector(".sidepanel-stations-content");
+async function makeStationInfo(station) {
+    let parentContainer = document.createElement('details');
     parentContainer.innerHTML = '';
 
-    let stationHeader = document.createElement('h2');
+    let stationHeader = document.createElement('summary');
+    let stationBody = document.createElement('div');
     let stationDescription = document.createElement('p');
     let stationArrivals = document.createElement('div');
     let stationDepartures = document.createElement('div');
 
     parentContainer.appendChild(stationHeader);
-    parentContainer.appendChild(stationDescription);
-    parentContainer.appendChild(stationArrivals);
-    parentContainer.appendChild(stationDepartures);
+    parentContainer.appendChild(stationBody);
+    stationBody.appendChild(stationDescription);
+    stationBody.appendChild(stationDepartures);
+    stationBody.appendChild(stationArrivals);
+
+    parentContainer.classList.add('station');
+    stationBody.classList.add('station-body');
+    stationHeader.classList.add('station-header');
+    stationDescription.classList.add('station-description');
+    stationDepartures.classList.add('station-routes-list');
+    stationArrivals.classList.add('station-routes-list');
 
     stationHeader.innerHTML = station.name_en;
 
@@ -387,20 +304,6 @@ async function renderStationInfo(station) {
                 routeLine = makeRouteLine(route, station.code, "arrival");
                 arrivals.push(routeLine);
             }
-            if (routeLine != undefined) {
-                routeLine.html.addEventListener('click', async () => {
-                    await toggleRoute(route.id);
-                    let routeLink = routeLine.html.querySelector('.route-link');
-                    let routeLinks = document.querySelectorAll('.route-link');
-                    routeLinks.forEach(link => {
-                        if (link != routeLink) {
-                            link.classList.remove('active');
-                        }
-                    })
-                    routeLink.classList.toggle('active');
-                })
-            }
-
         })
         let arrivalsSorted = arrivals.sort((a, b) => a.time > b.time ? 1 : -1);
         let departuresSorted = departures.sort((a, b) => a.time > b.time ? 1 : -1);
@@ -414,6 +317,8 @@ async function renderStationInfo(station) {
         stationDepartures.innerHTML += '<p>There is no schedule yet</p>';
         stationArrivals.innerHTML += '<p>There is no schedule yet</p>'
     }
+
+    return parentContainer;
 }
 
 // Creates html container for given route for given station
@@ -424,12 +329,15 @@ function makeRouteLine(route, stationCode, direction) {
     let routeLabel = document.createElement('span');
     let routeDestination = document.createElement('span');
     let routeFrequency = document.createElement('span');
+    let routeSchedule = document.createElement('div');
 
     routeLine.appendChild(routeTime);
     routeLine.appendChild(routeLink);
     routeLink.appendChild(routeLabel);
     routeLink.appendChild(routeDestination);
     routeLine.appendChild(routeFrequency);
+    routeLine.appendChild(routeSchedule);
+
 
     routeLine.classList.add('route-line');
     routeLink.classList.add('route-link');
@@ -437,14 +345,17 @@ function makeRouteLine(route, stationCode, direction) {
     routeLabel.classList.add('route-label');
     routeDestination.classList.add('route-destination');
     routeFrequency.classList.add('route-frequency');
+    routeSchedule.classList.add('route-schedule');
 
     routeLink.setAttribute('id', route.id);
 
     let time = getRouteTimeByStation(route, stationCode);
+    let schedule = createRouteScheduleString(getRouteSchedule(route));
 
     routeTime.innerHTML = time + ' ';
     routeLabel.innerHTML = route.ref;
-    routeFrequency.innerHTML = route.frequency;
+    routeFrequency.innerHTML = route.frequency + '<br>';
+    routeSchedule.innerHTML = schedule;
 
     let destination;
 
@@ -457,6 +368,14 @@ function makeRouteLine(route, stationCode, direction) {
     routeDestination.innerHTML = getStationNameByCode(destination) + ' ';
 
     return { html: routeLine, time: Date.parse('1970-01-01T' + time) };
+}
+
+// Creates stations tab content
+async function makeStationsTab() {
+    stations.forEach(async (station) => {
+        let content = await makeStationInfo(station)
+        document.querySelector('.sidepanel-routes-content').appendChild(content);
+    })
 }
 
 // Sidepanel interactions
@@ -483,7 +402,7 @@ function getRoutesByStation(stationCode) {
     routesList.forEach(route => {
         if ("stations" in route) {
             route.stations.forEach(station => {
-                if (station.name == stationCode) {
+                if (station.code == stationCode) {
                     routes.push(route);
                 }
             })
@@ -496,6 +415,7 @@ function getRoutesByStation(stationCode) {
 export let railwayNetwork = new RailwayNetwork();
 railwayNetwork.show();
 
-makeRoutesList(routesList);
-addRoutesLinksEvents();
+
 showStations();
+await makeStationsTab();
+addRoutesLinksEvents();

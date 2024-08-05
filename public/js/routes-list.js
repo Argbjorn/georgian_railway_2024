@@ -9,12 +9,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "ozurgeti",
+            "code": "ozurgeti",
             "role": "start",
             "time": "08:55"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "17:17"
          }
@@ -30,12 +30,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "08:45"
          },
          {
-            "name": "ozurgeti",
+            "code": "ozurgeti",
             "role": "end",
             "time": "17:24"
          }
@@ -51,12 +51,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "start",
             "time": "11:55"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "17:17"
          }
@@ -72,12 +72,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "08:45"
          },
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "end",
             "time": "14:35"
          }
@@ -93,12 +93,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "21:35"
          },
          {
-            "name": "ozurgeti",
+            "code": "ozurgeti",
             "role": "end",
             "time": "23:55"
          }
@@ -114,12 +114,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "ozurgeti",
+            "code": "ozurgeti",
             "role": "start",
             "time": "06:00"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "08:07"
          }
@@ -135,12 +135,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "borjomi",
+            "code": "borjomi",
             "role": "start",
             "time": "16:35"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "21:01"
          }
@@ -156,12 +156,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "06:35"
          },
          {
-            "name": "borjomi",
+            "code": "borjomi",
             "role": "end",
             "time": "10:51"
          }
@@ -177,12 +177,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "start",
             "time": "06:05"
          },
          {
-            "name": "sachkhere",
+            "code": "sachkhere",
             "role": "end",
             "time": "09:27"
          }
@@ -198,12 +198,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "sachkhere",
+            "code": "sachkhere",
             "role": "start",
             "time": "10:10"
          },
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "end",
             "time": "13:35"
          }
@@ -219,12 +219,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "19:15"
          },
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "end",
             "time": "23:32"
          }
@@ -240,12 +240,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "start",
-            "time": "5:40"
+            "time": "05:40"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "10:02"
          }
@@ -261,12 +261,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "08:25"
          },
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "end",
             "time": "12:37"
          }
@@ -282,12 +282,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "kutaisi",
+            "code": "kutaisi",
             "role": "start",
             "time": "16:45"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "20:55"
          }
@@ -303,12 +303,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "borjomi",
+            "code": "borjomi",
             "role": "start",
             "time": "5:50"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "10:16"
          }
@@ -324,12 +324,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "18:35"
          },
          {
-            "name": "borjomi",
+            "code": "borjomi",
             "role": "end",
             "time": "22:53"
          }
@@ -345,12 +345,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "18:30"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "23:31"
          }
@@ -366,12 +366,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "08:00"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "13:08"
          }
@@ -387,12 +387,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "08:10"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "13:11"
          }
@@ -408,12 +408,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "17:05"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "22:13"
          }
@@ -429,12 +429,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 25 August",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "14:20"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "19:28"
          }
@@ -450,12 +450,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 25 August",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "06:30"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "11:38"
          }
@@ -471,12 +471,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 31 August",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "17:20"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "22:21"
          }
@@ -492,12 +492,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 31 August",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "10:25"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "15:33"
          }
@@ -513,12 +513,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 31 July",
       "stations": [
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "start",
             "time": "00:40"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "05:41"
          }
@@ -534,12 +534,12 @@ export const routesList = [
       "frequency": "daily, 15 July – 31 July",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "00:30"
          },
          {
-            "name": "batumi",
+            "code": "batumi",
             "role": "end",
             "time": "05:38"
          }
@@ -555,12 +555,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "zugdidi",
+            "code": "zugdidi",
             "role": "start",
             "time": "17:20"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "23:20"
          }
@@ -576,12 +576,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "08:20"
          },
          {
-            "name": "zugdidi",
+            "code": "zugdidi",
             "role": "end",
             "time": "14:21"
          }
@@ -597,12 +597,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "poti",
+            "code": "poti",
             "role": "start",
             "time": "07:20"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "13:00"
          }
@@ -618,12 +618,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "17:25"
          },
          {
-            "name": "poti",
+            "code": "poti",
             "role": "end",
             "time": "23:11"
          }
@@ -639,12 +639,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "07:10"
          },
          {
-            "name": "gardabani",
+            "code": "gardabani",
             "role": "end",
             "time": "08:13"
          }
@@ -660,12 +660,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "gardabani",
+            "code": "gardabani",
             "role": "start",
             "time": "08:25"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "09:32"
          }
@@ -681,12 +681,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "start",
             "time": "19:00"
          },
          {
-            "name": "gardabani",
+            "code": "gardabani",
             "role": "end",
             "time": "20:05"
          }
@@ -702,12 +702,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "gardabani",
+            "code": "gardabani",
             "role": "start",
             "time": "20:20"
          },
          {
-            "name": "tbilisi",
+            "code": "tbilisi",
             "role": "end",
             "time": "21:26"
          }
@@ -723,12 +723,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "zestafoni",
+            "code": "zestafoni",
             "role": "start",
             "time": "06:50"
          },
          {
-            "name": "khashuri",
+            "code": "khashuri",
             "role": "end",
             "time": "08:57"
          }
@@ -744,12 +744,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "khashuri",
+            "code": "khashuri",
             "role": "start",
             "time": "17:05"
          },
          {
-            "name": "zestafoni",
+            "code": "zestafoni",
             "role": "end",
             "time": "19:16"
          }
@@ -765,12 +765,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "khashuri",
+            "code": "khashuri",
             "role": "start",
             "time": "06:40"
          },
          {
-            "name": "zestafoni",
+            "code": "zestafoni",
             "role": "end",
             "time": "08:51"
          }
@@ -786,12 +786,12 @@ export const routesList = [
       "frequency": "daily",
       "stations": [
          {
-            "name": "zestafoni",
+            "code": "zestafoni",
             "role": "start",
             "time": "17:15"
          },
          {
-            "name": "khashuri",
+            "code": "khashuri",
             "role": "end",
             "time": "19:25"
          }
