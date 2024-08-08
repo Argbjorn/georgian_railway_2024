@@ -353,6 +353,11 @@ export const routesList = [
             "code": "tbilisi",
             "role": "end",
             "time": "23:31"
+         },
+         {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "20:19"
          }
       ]
    },

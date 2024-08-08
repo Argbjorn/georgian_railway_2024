@@ -62,7 +62,7 @@ async function createRoute(routeId) {
         stationData.elements.forEach(element => {
             route.addLayer(L.circleMarker([element.lat, element.lon], newRoute.cirkleMarkerOptions).bindTooltip(getStationName(element), {
                 permanent: false,
-                direction: 'bottom',
+                direction: 'top',
                 opacity: 0.9
             }));
         })
@@ -178,22 +178,17 @@ function getStationName(data) {
     return stationName
 }
 
-// Returns an array with a given route departure time and arrival time like ['17:05', '22:13']
+// Returns an sorted by time array with a given route schedule like [[<station1_name>, '17:05'], [<station2_name>, '22:13']]
 function getRouteSchedule(route) {
-    let departureTime, departureStation, arrivalTime, arrivalStation;
+    let schedule = [];
     if ("stations" in route) {
         route.stations.forEach(station => {
-            if ("role" in station && station.role == "start") {
-                departureTime = station.time;
-                departureStation = station.code;
-            } else if ("role" in station && station.role == "end") {
-                arrivalTime = station.time;
-                arrivalStation = station.code;
-            }
+            schedule.push([station.code, station.time])
         })
     }
-    if (isSet(departureTime) && isSet(departureStation) && isSet(arrivalTime) && isSet(arrivalStation)) {
-        return [[departureTime, departureStation], [arrivalTime, arrivalStation]]
+    schedule.sort((a, b) => Date.parse('1970-01-01T' + a[1]) > Date.parse('1970-01-01T' + b[1]) ? 1 : -1);
+    if (true) {
+        return schedule
     } else {
         return "There is no schedule for the route yet"
     }
@@ -201,10 +196,14 @@ function getRouteSchedule(route) {
 
 // Returns a schedule string like '17:05 → 22:13     daily' for a route 
 function createRouteScheduleString(routeTiming) {
-    return routeTiming[0][0] + ' ' + getStationNameByCode(routeTiming[0][1]) + '<br>' + routeTiming[1][0] + ' ' + getStationNameByCode(routeTiming[1][1])
+    let scheduleString = '';
+    routeTiming.forEach(line => {
+        scheduleString += line[1] + ' ' + getStationNameByCode(line[0]) + '<br>'
+    })
+    return scheduleString
 }
 
-// Return the first and the last station of a given route
+// Returns the first and the last station of a given route
 function getRouteEndpoints(route) {
     let start, end;
     route.stations.forEach(station => {
@@ -225,7 +224,12 @@ function getStationNameByCode(stationCode) {
             stationName = station.name_en;
         }
     })
-    return stationName;
+    if (isSet(stationName)) {
+        return stationName;
+    } else {
+        return 'Unknown (yet) station'
+    }
+    
 }
 
 // Returns time of given route of given station by code
