@@ -186,15 +186,15 @@ function getRouteSchedule(route) {
             schedule.push([station.code, station.time])
         })
     }
-    schedule.sort((a, b) => Date.parse('1970-01-01T' + a[1]) > Date.parse('1970-01-01T' + b[1]) ? 1 : -1);
-    if (true) {
+    if (schedule.length > 1) {
+        schedule.sort((a, b) => Date.parse('1970-01-01T' + a[1]) > Date.parse('1970-01-01T' + b[1]) ? 1 : -1);
         return schedule
     } else {
         return "There is no schedule for the route yet"
     }
 }
 
-// Returns a schedule string like '17:05 → 22:13     daily' for a route 
+// Returns a schedule string (the whole schedule block for an route) 
 function createRouteScheduleString(routeTiming) {
     let scheduleString = '';
     routeTiming.forEach(line => {
