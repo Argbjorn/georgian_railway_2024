@@ -203,17 +203,20 @@ function createRouteScheduleString(routeTiming) {
     return scheduleString
 }
 
-// Returns the first and the last station of a given route
-function getRouteEndpoints(route) {
+// Returns the first, the last station and middle stations of a given route
+function getRoutePoints(route) {
     let start, end;
+    let middle = [];
     route.stations.forEach(station => {
         if (station.role == "start") {
             start = station.code;
         } else if (station.role == "end") {
             end = station.code;
+        } else {
+            middle.push(station.code)
         }
     })
-    return [start, end]
+    return [start, end, middle]
 }
 
 // Returns a name of given station by code
@@ -285,12 +288,14 @@ async function makeStationInfo(station) {
     let stationDescription = document.createElement('p');
     let stationArrivals = document.createElement('div');
     let stationDepartures = document.createElement('div');
+    let stationPassesThrough = document.createElement('div');
 
     parentContainer.appendChild(stationHeader);
     parentContainer.appendChild(stationBody);
     stationBody.appendChild(stationDescription);
     stationBody.appendChild(stationDepartures);
     stationBody.appendChild(stationArrivals);
+    stationBody.appendChild(stationPassesThrough);
 
     parentContainer.classList.add('station');
     stationBody.classList.add('station-body');
@@ -298,6 +303,7 @@ async function makeStationInfo(station) {
     stationDescription.classList.add('station-description');
     stationDepartures.classList.add('station-routes-list');
     stationArrivals.classList.add('station-routes-list');
+    stationPassesThrough.classList.add('station-routes-list');
     parentContainer.setAttribute('id', station.code);
 
     stationHeader.addEventListener('click', () => {
@@ -316,34 +322,55 @@ async function makeStationInfo(station) {
 
     stationArrivals.innerHTML = '<h4>Arrivals</h4>';
     stationDepartures.innerHTML = '<h4>Departures</h4>';
+    stationPassesThrough.innerHTML = '<h4>Passes through</h4>';
 
     let stationRoutes = getRoutesByStation(station.code);
 
     if (stationRoutes.length > 0) {
         let arrivals = [];
         let departures = [];
+        let passesThrough = [];
         stationRoutes.forEach(route => {
             let routeLine;
-            if (station.code == getRouteEndpoints(route)[0]) {
+            let routePoints = getRoutePoints(route);
+            if (station.code == routePoints[0]) {
                 routeLine = makeRouteLine(route, station.code, "departure");
                 departures.push(routeLine);
-            } else if (station.code == getRouteEndpoints(route)[1]) {
+            } else if (station.code == routePoints[1]) {
                 routeLine = makeRouteLine(route, station.code, "arrival");
                 arrivals.push(routeLine);
+            } else if (routePoints[2].includes(station.code)) {
+                routeLine = makeRouteLine(route, station.code, "through");
+                passesThrough.push(routeLine);
             }
-        })
+        });
+        if (arrivals.length == 0) {
+            stationArrivals.classList.add('hidden');
+        };
+        if (departures.length == 0) {
+            stationDepartures.classList.add('hidden');
+        };
+        if (passesThrough.length == 0) {
+            stationPassesThrough.classList.add('hidden');
+        };
         let arrivalsSorted = arrivals.sort((a, b) => a.time > b.time ? 1 : -1);
         let departuresSorted = departures.sort((a, b) => a.time > b.time ? 1 : -1);
+        let passesThroughSorted = passesThrough.sort((a, b) => a.time > b.time ? 1 : -1);
         arrivalsSorted.forEach(a => {
             stationArrivals.appendChild(a.html);
         });
         departuresSorted.forEach(a => {
             stationDepartures.appendChild(a.html);
-        })
+        });
+        passesThroughSorted.forEach(a => {
+            stationPassesThrough.appendChild(a.html);
+        });
     } else {
         stationDepartures.innerHTML += '<p>There is no schedule yet</p>';
-        stationArrivals.innerHTML += '<p>There is no schedule yet</p>'
+        stationArrivals.innerHTML += '<p>There is no schedule yet</p>';
+        stationPassesThrough.classList.add('hidden');
     }
+    
 
     return parentContainer;
 }
@@ -387,12 +414,14 @@ function makeRouteLine(route, stationCode, direction) {
     let destination;
 
     if (direction == "departure") {
-        destination = getRouteEndpoints(route)[1]
+        destination = getStationNameByCode(getRoutePoints(route)[1])
     } else if (direction == "arrival") {
-        destination = getRouteEndpoints(route)[0]
+        destination = getStationNameByCode(getRoutePoints(route)[0])
+    } else if (direction == "through") {
+        destination = getStationNameByCode(getRoutePoints(route)[0]) + ' ' + '→' + ' ' + getStationNameByCode(getRoutePoints(route)[1])
     }
 
-    routeDestination.innerHTML = getStationNameByCode(destination) + ' ';
+    routeDestination.innerHTML = destination + ' ';
 
     return { html: routeLine, time: Date.parse('1970-01-01T' + time) };
 }
