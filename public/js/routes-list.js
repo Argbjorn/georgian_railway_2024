@@ -368,6 +368,21 @@ export const routesList = [
             "time": "08:00"
          },
          {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "11:19"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "12:16"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "12:43"
+         },
+         {
             "code": "batumi",
             "role": "end",
             "time": "13:08"
@@ -386,6 +401,21 @@ export const routesList = [
             "code": "batumi",
             "role": "start",
             "time": "08:10"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "08:30"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "09:00"
+         },
+         {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "09:59"
          },
          {
             "code": "tbilisi",
@@ -408,6 +438,21 @@ export const routesList = [
             "time": "17:05"
          },
          {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "20:24"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "21:21"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "21:48"
+         },
+         {
             "code": "batumi",
             "role": "end",
             "time": "22:13"
@@ -426,6 +471,21 @@ export const routesList = [
             "code": "batumi",
             "role": "start",
             "time": "14:20"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "14:40"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "15:17"
+         },
+         {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "16:16"
          },
          {
             "code": "tbilisi",
@@ -448,9 +508,24 @@ export const routesList = [
             "time": "06:30"
          },
          {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "09:49"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "10:46"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "11:13"
+         },
+         {
             "code": "batumi",
             "role": "end",
-            "time": "11:38\t"
+            "time": "11:38"
          }
       ]
    },
@@ -466,6 +541,21 @@ export const routesList = [
             "code": "batumi",
             "role": "start",
             "time": "17:20"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "17:40"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "18:10"
+         },
+         {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "19:09"
          },
          {
             "code": "tbilisi",
@@ -486,6 +576,21 @@ export const routesList = [
             "code": "tbilisi",
             "role": "start",
             "time": "10:25"
+         },
+         {
+            "code": "kutaisiairport",
+            "role": "middle",
+            "time": "13:44"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "14:41"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "15:08"
          },
          {
             "code": "batumi",
