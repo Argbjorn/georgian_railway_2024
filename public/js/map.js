@@ -12,12 +12,12 @@ var osmTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 export const map = L.map('map', {
     center: getDefaultMapCenter(),
     zoom: 8,
-    layers: [osmTiles]
+    layers: [atlasTiles]
 });
 
 // Tile object for L.control
 const tiles = {
-    "Standard": osmTiles,
+    "Standard OSM": osmTiles,
     "Atlas": atlasTiles
 };
 const overlays = {}
