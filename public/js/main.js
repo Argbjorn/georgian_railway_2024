@@ -187,7 +187,7 @@ function getRouteSchedule(route) {
         })
     }
     if (schedule.length > 1) {
-        schedule.sort((a, b) => Date.parse('1970-01-01T' + a[1]) > Date.parse('1970-01-01T' + b[1]) ? 1 : -1);
+        //schedule.sort((a, b) => Date.parse('1970-01-01T' + a[1]) > Date.parse('1970-01-01T' + b[1]) ? 1 : -1);
         return schedule
     } else {
         return "There is no schedule for the route yet"
