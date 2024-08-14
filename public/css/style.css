@@ -77,7 +77,16 @@ h4 {
     display: block;
 }
 
+.route-name {
+    display: inline-block;
+    width: 85%;
+}
+
 .route-time {
+    display: inline-block;
+    width: 15%;
+    vertical-align: top;
+    padding-top: 1px;
     padding-right: 5px;
     font-family: 'Roboto Mono', monospace;
     font-size: 13px;

@@ -379,17 +379,19 @@ async function makeStationInfo(station) {
 function makeRouteLine(route, stationCode, direction) {
     let routeLine = document.createElement('div');
     let routeLink = document.createElement('a');
-    let routeTime = document.createElement('span');
+    let routeTime = document.createElement('div');
     let routeLabel = document.createElement('span');
     let routeDestination = document.createElement('span');
     let routeFrequency = document.createElement('span');
     let routeSchedule = document.createElement('div');
+    let routeName = document.createElement('div');
 
     routeLine.appendChild(routeTime);
-    routeLine.appendChild(routeLink);
+    routeLine.appendChild(routeName);
+    routeName.appendChild(routeLink);
     routeLink.appendChild(routeLabel);
     routeLink.appendChild(routeDestination);
-    routeLine.appendChild(routeFrequency);
+    routeName.appendChild(routeFrequency);
     routeLine.appendChild(routeSchedule);
 
 
@@ -400,6 +402,7 @@ function makeRouteLine(route, stationCode, direction) {
     routeDestination.classList.add('route-destination');
     routeFrequency.classList.add('route-frequency');
     routeSchedule.classList.add('route-schedule');
+    routeName.classList.add('route-name');
 
     routeLink.setAttribute('id', route.id);
 
