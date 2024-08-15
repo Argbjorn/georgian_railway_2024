@@ -79,12 +79,12 @@ h4 {
 
 .route-name {
     display: inline-block;
-    width: 85%;
+    max-width: 80%;
 }
 
 .route-time {
     display: inline-block;
-    width: 15%;
+    width: 45px;
     vertical-align: top;
     padding-top: 1px;
     padding-right: 5px;
@@ -105,7 +105,7 @@ h4 {
 }
 
 .route-schedule.active {
-    display: inline-block;
+    display: block;
 }
 
 .station-routes-list {
