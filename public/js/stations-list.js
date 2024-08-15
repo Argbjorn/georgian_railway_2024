@@ -276,6 +276,18 @@ export const stations = [
       "name_ru": "Мэриа"
    },
    {
+      "id": 11453231327,
+      "coords": [
+         41.9816194,
+         43.3690838
+      ],
+      "code": "moliti",
+      "type": "secondary",
+      "name_en": "Moliti",
+      "name_ka": "მოლითი",
+      "name_ru": "Молити"
+   },
+   {
       "id": 10785134086,
       "coords": [
          41.8381742,
@@ -310,6 +322,18 @@ export const stations = [
       "name_en": "Ozurgeti",
       "name_ka": "ოზურგეთი",
       "name_ru": "Озургети"
+   },
+   {
+      "id": 10785134077,
+      "coords": [
+         41.9441108,
+         41.9192453
+      ],
+      "code": "platform11km",
+      "type": "secondary",
+      "name_en": "Platform 11 km",
+      "name_ka": "უცნობი სადგური",
+      "name_ru": "Платформа 11 км"
    },
    {
       "id": 1081901401,
