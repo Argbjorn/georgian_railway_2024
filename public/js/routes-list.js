@@ -1078,9 +1078,9 @@ export const routesList = [
             "time": "20:08"
          },
          {
-            "code": "unknownstation",
+            "code": "kharagouli",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "20:36"
          },
          {
             "code": "tsipa",
@@ -1133,9 +1133,9 @@ export const routesList = [
             "time": "10:19"
          },
          {
-            "code": "unknownstation",
+            "code": "kharagouli",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "11:01"
          },
          {
             "code": "zestafoni",
