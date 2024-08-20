@@ -505,6 +505,7 @@ function closeRoutes() {
 map.addEventListener('click', () => {
     activeStation[0].setDefault();
     closeAllStationLines();
+    hideActiveRoute();
 })
 
 // Show railway network
