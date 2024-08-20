@@ -40,7 +40,7 @@ export class RailwayNetwork {
     show() {
         this.layerGroupShadowed.remove();
         this.layerGroup.addTo(map);
-        map.setView(getDefaultMapCenter(), 8)
+        // map.setView(getDefaultMapCenter(), 8)
 
     }
 

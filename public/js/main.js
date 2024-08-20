@@ -4,10 +4,11 @@ import { routesList } from "./routes-list.js";
 import { Station } from "./station.js";
 import { stations as stationsList } from "./stations-list.js";
 import { openSidePanelIfClosed } from "./map.js";
+import { map } from "./map.js";
 
 let activeRoute = [];
 let routes = [];
-let activeStation = [];
+export let activeStation = [];
 let stations = [];
 
 // Getting data
@@ -144,7 +145,6 @@ function showStations() {
             };
             closeAllStationLines();
             closeRoutes();
-            closeSidepanel();
         });
     })
 }
@@ -309,6 +309,9 @@ async function makeStationInfo(station) {
     stationHeader.addEventListener('click', () => {
         if(activeRoute.length > 0) {
             hideActiveRoute();
+        }
+        if (activeStation.length > 0) {
+            activeStation[0].setDefault()
         }
     })
 
@@ -497,6 +500,12 @@ function closeRoutes() {
         schedule.classList.remove('active');
     })
 }
+
+// Click on the map
+map.addEventListener('click', () => {
+    activeStation[0].setDefault();
+    closeAllStationLines();
+})
 
 // Show railway network
 export let railwayNetwork = new RailwayNetwork();
