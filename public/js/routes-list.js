@@ -885,7 +885,7 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "frequency": "daily, 15 July – 25 August",
+      "frequency": "daily, 15 August – 15 September",
       "stations": [
          {
             "code": "batumicentral",
@@ -920,7 +920,7 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "frequency": "daily, 15 July – 25 August",
+      "frequency": "daily, 15 August – 15 September",
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -955,7 +955,7 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "frequency": "daily, 15 July – 31 August",
+      "frequency": "daily, 15 August – 30 September",
       "stations": [
          {
             "code": "batumicentral",
@@ -990,7 +990,7 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "frequency": "daily, 15 July – 31 August",
+      "frequency": "daily, 15 August – 30 September",
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1016,6 +1016,76 @@ export const routesList = [
             "code": "batumicentral",
             "role": "end",
             "time": "15:33"
+         }
+      ]
+   },
+   {
+      "id": 17890098,
+      "ref": 811,
+      "name:ka": "ბათუმი → თბილისი",
+      "name:en": "Batumi → Tbilisi",
+      "name:ru": "Батуми → Тбилиси",
+      "frequency": "24, 25, 31 August, 1 September",
+      "stations": [
+         {
+            "code": "batumicentral",
+            "role": "start",
+            "time": "00:40"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "01:00"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "01:30"
+         },
+         {
+            "code": "kutaisiinternationalairport",
+            "role": "middle",
+            "time": "02:29"
+         },
+         {
+            "code": "tbilisicentralstation",
+            "role": "end",
+            "time": "05:41"
+         }
+      ]
+   },
+   {
+      "id": 17890096,
+      "ref": 812,
+      "name:ka": "თბილისი → ბათუმი",
+      "name:en": "Tbilisi → Batumi",
+      "name:ru": "Тбилиси → Батуми",
+      "frequency": "24, 25, 31 August, 1 September",
+      "stations": [
+         {
+            "code": "tbilisicentralstation",
+            "role": "start",
+            "time": "00:30"
+         },
+         {
+            "code": "kutaisiinternationalairport",
+            "role": "middle",
+            "time": "03:49"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "04:46"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "05:13"
+         },
+         {
+            "code": "batumicentral",
+            "role": "end",
+            "time": "05:38"
          }
       ]
    },
@@ -1341,6 +1411,76 @@ export const routesList = [
             "code": "poti",
             "role": "end",
             "time": "23:11"
+         }
+      ]
+   },
+   {
+      "id": 17954523,
+      "ref": 887,
+      "name:ka": "ბათუმი → თბილისი",
+      "name:en": "Batumi → Tbilisi",
+      "name:ru": "Батуми → Тбилиси",
+      "frequency": "25 August",
+      "stations": [
+         {
+            "code": "batumicentral",
+            "role": "start",
+            "time": "00:10"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "00:30"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "01:06"
+         },
+         {
+            "code": "kutaisiinternationalairport",
+            "role": "middle",
+            "time": "02:05"
+         },
+         {
+            "code": "tbilisicentralstation",
+            "role": "end",
+            "time": "05:18"
+         }
+      ]
+   },
+   {
+      "id": 17954522,
+      "ref": 888,
+      "name:ka": "თბილისი → ბათუმი",
+      "name:en": "Tbilisi → Batumi",
+      "name:ru": "Тбилиси → Батуми",
+      "frequency": "24 August",
+      "stations": [
+         {
+            "code": "tbilisicentralstation",
+            "role": "start",
+            "time": "12:50"
+         },
+         {
+            "code": "kutaisiinternationalairport",
+            "role": "middle",
+            "time": "16:09"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "17:16"
+         },
+         {
+            "code": "kobuleti",
+            "role": "middle",
+            "time": "18:05"
+         },
+         {
+            "code": "batumicentral",
+            "role": "end",
+            "time": "18:39"
          }
       ]
    },
