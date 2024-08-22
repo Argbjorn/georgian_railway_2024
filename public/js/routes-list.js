@@ -10,7 +10,7 @@ export const routesList = [
          {
             "code": "ozurgeti",
             "role": "start",
-            "time": "08:55"
+            "time": "08:35"
          },
          {
             "code": "platform16km",
@@ -65,72 +65,72 @@ export const routesList = [
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "12:14"
+            "time": "12:19"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "12:32"
+            "time": "12:37"
          },
          {
             "code": "sviri",
             "role": "middle",
-            "time": "12:57"
+            "time": "13:07"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "13:15"
+            "time": "13:25"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "13:55"
+            "time": "14:05"
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "time": "14:12"
+            "time": "14:22"
          },
          {
             "code": "moliti",
             "role": "middle",
-            "time": "14:24"
+            "time": "14:34"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "14:36"
+            "time": "14:46"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "15:00"
+            "time": "15:10"
          },
          {
             "code": "kareli",
             "role": "middle",
-            "time": "15:41"
+            "time": "15:51"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "15:59"
+            "time": "16:09"
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "time": "16:24"
+            "time": "16:34"
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "time": "16:52"
+            "time": "17:02"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "17:17"
+            "time": "17:35"
          }
       ]
    },
@@ -290,62 +290,62 @@ export const routesList = [
          {
             "code": "sviri",
             "role": "middle",
-            "time": "12:57"
+            "time": "13:07"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "13:15"
+            "time": "13:25"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "13:55"
+            "time": "14:05"
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "time": "14:12"
+            "time": "14:22"
          },
          {
             "code": "moliti",
             "role": "middle",
-            "time": "14:24"
+            "time": "14:34"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "14:36"
+            "time": "14:46"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "15:00"
+            "time": "15:10"
          },
          {
             "code": "kareli",
             "role": "middle",
-            "time": "15:41"
+            "time": "15:51"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "15:59"
+            "time": "16:09"
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "time": "16:24"
+            "time": "16:34"
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "time": "16:52"
+            "time": "17:02"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "17:17"
+            "time": "17:35"
          }
       ]
    },
