@@ -245,27 +245,27 @@ export const routesList = [
          {
             "code": "meria",
             "role": "middle",
-            "time": "16:49"
+            "time": "16:59"
          },
          {
             "code": "platform11km",
             "role": "middle",
-            "time": "17:00"
+            "time": "17:10"
          },
          {
             "code": "kakhuri",
             "role": "middle",
-            "time": "17:09"
+            "time": "17:19"
          },
          {
             "code": "platform16km",
             "role": "middle",
-            "time": "17:19"
+            "time": "17:29"
          },
          {
             "code": "ozurgeti",
             "role": "end",
-            "time": "17:24"
+            "time": "17:44"
          }
       ]
    },
@@ -1025,7 +1025,7 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "frequency": "24, 25, 31 August, 1 September",
+      "frequency": "31 August, 1 September",
       "stations": [
          {
             "code": "batumicentral",
@@ -1060,7 +1060,7 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "frequency": "24, 25, 31 August, 1 September",
+      "frequency": "31 August, 1 September",
       "stations": [
          {
             "code": "tbilisicentralstation",
