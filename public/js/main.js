@@ -416,6 +416,8 @@ function makeRouteLine(route, stationCode, direction) {
     routeLabel.innerHTML = route.ref;
     routeFrequency.innerHTML = route.frequency + '<br>';
     routeSchedule.innerHTML = schedule;
+    routeSchedule.innerHTML += route.complete ? '' : "<p class='disclaimer'>This route is incomplete, so some train stops aren't in the list. If you have an additional information, change the route on OSM or let me know (see About for contacts).</p>"
+    
 
     let destination;
 

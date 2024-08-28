@@ -6,6 +6,7 @@ export const routesList = [
       "name:en": "Ozurgeti → Tbilisi",
       "name:ru": "Озургети → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "ozurgeti",
@@ -141,6 +142,7 @@ export const routesList = [
       "name:en": "Tbilisi → Ozurgeti",
       "name:ru": "Тбилиси → Озургети",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -276,6 +278,7 @@ export const routesList = [
       "name:en": "Kutaisi → Tbilisi",
       "name:ru": "Кутаиси → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "kutaisi1",
@@ -356,6 +359,7 @@ export const routesList = [
       "name:en": "Tbilisi → Kutaisi",
       "name:ru": "Тбилиси → Кутаиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -436,6 +440,7 @@ export const routesList = [
       "name:en": "Batumi → Ozurgeti",
       "name:ru": "Батуми → Озургети",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "batumicentral",
@@ -461,6 +466,7 @@ export const routesList = [
       "name:en": "Ozurgeti → Batumi",
       "name:ru": "Озургети → Батуми",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "ozurgeti",
@@ -486,6 +492,7 @@ export const routesList = [
       "name:en": "Borjomi → Tbilisi",
       "name:ru": "Боржоми → Тбилиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "borjomiparki",
@@ -506,6 +513,7 @@ export const routesList = [
       "name:en": "Tbilisi → Borjomi",
       "name:ru": "Тбилиси → Боржоми",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -526,6 +534,7 @@ export const routesList = [
       "name:en": "Kutaisi → Sachkhere",
       "name:ru": "Кутаиси → Сачхере",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "kutaisi1",
@@ -556,6 +565,7 @@ export const routesList = [
       "name:en": "Sachkhere → Kutaisi",
       "name:ru": "Сачхере → Кутаиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "sachkhere",
@@ -586,6 +596,7 @@ export const routesList = [
       "name:en": "Batumi → Kutaisi",
       "name:ru": "Батуми → Кутаиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "batumicentral",
@@ -621,6 +632,7 @@ export const routesList = [
       "name:en": "Kutaisi → Batumi",
       "name:ru": "Кутаиси → Батуми",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "kutaisi1",
@@ -656,6 +668,7 @@ export const routesList = [
       "name:en": "Batumi → Kutaisi",
       "name:ru": "Батуми → Кутаиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "batumicentral",
@@ -691,6 +704,7 @@ export const routesList = [
       "name:en": "Kutaisi → Batumi",
       "name:ru": "Кутаиси → Батуми",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "kutaisi1",
@@ -726,6 +740,7 @@ export const routesList = [
       "name:en": "Borjomi → Tbilisi",
       "name:ru": "Боржоми → Тбилиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "borjomiparki",
@@ -746,6 +761,7 @@ export const routesList = [
       "name:en": "Tbilisi → Borjomi",
       "name:ru": "Тбилиси → Боржоми",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -766,6 +782,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "batumicentral",
@@ -801,6 +818,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -836,6 +854,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "batumicentral",
@@ -871,6 +890,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -906,6 +926,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "frequency": "daily, 15 August – 15 September",
+      "complete": true,
       "stations": [
          {
             "code": "batumicentral",
@@ -941,6 +962,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "frequency": "daily, 15 August – 15 September",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -976,6 +998,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "frequency": "daily, 15 August – 30 September",
+      "complete": true,
       "stations": [
          {
             "code": "batumicentral",
@@ -1011,6 +1034,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "frequency": "daily, 15 August – 30 September",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1046,6 +1070,7 @@ export const routesList = [
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
       "frequency": "31 August, 1 September",
+      "complete": true,
       "stations": [
          {
             "code": "batumicentral",
@@ -1081,6 +1106,7 @@ export const routesList = [
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
       "frequency": "31 August, 1 September",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1116,6 +1142,7 @@ export const routesList = [
       "name:en": "Zugdidi → Tbilisi",
       "name:ru": "Зугдиди → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "zugdidi",
@@ -1201,6 +1228,7 @@ export const routesList = [
       "name:en": "Tbilisi → Zugdidi",
       "name:ru": "Тбилиси → Зугдиди",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1286,6 +1314,7 @@ export const routesList = [
       "name:en": "Poti → Tbilisi",
       "name:ru": "Поти → Тбилиси",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "poti",
@@ -1361,6 +1390,7 @@ export const routesList = [
       "name:en": "Tbilisi → Poti",
       "name:ru": "Тбилиси → Поти",
       "frequency": "daily",
+      "complete": true,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1441,6 +1471,7 @@ export const routesList = [
       "name:en": "Tbilisi → Gardabani",
       "name:ru": "Тбилиси → Гардабани",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1466,6 +1497,7 @@ export const routesList = [
       "name:en": "Gardabani → Tbilisi",
       "name:ru": "Гардабани → Тбилиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "gardabani",
@@ -1491,6 +1523,7 @@ export const routesList = [
       "name:en": "Tbilisi → Gardabani",
       "name:ru": "Тбилиси → Гардабани",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "tbilisicentralstation",
@@ -1516,6 +1549,7 @@ export const routesList = [
       "name:en": "Gardabani → Tbilisi",
       "name:ru": "Гардабани → Тбилиси",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "gardabani",
@@ -1541,6 +1575,7 @@ export const routesList = [
       "name:en": "Zestafoni → Khashuri",
       "name:ru": "Зестафони → Хашури",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "zestafoni",
@@ -1566,6 +1601,7 @@ export const routesList = [
       "name:en": "Khashuri → Zestafoni",
       "name:ru": "Хашури → Зестафони",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "khashuri",
@@ -1591,6 +1627,7 @@ export const routesList = [
       "name:en": "Khashuri → Zestafoni",
       "name:ru": "Хашури → Зестафони",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "khashuri",
@@ -1616,6 +1653,7 @@ export const routesList = [
       "name:en": "Zestafoni → Khashuri",
       "name:ru": "Зестафони → Хашури",
       "frequency": "daily",
+      "complete": false,
       "stations": [
          {
             "code": "zestafoni",
