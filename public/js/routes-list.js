@@ -470,7 +470,7 @@ export const routesList = [
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "07:25"
          },
          {
             "code": "batumicentral",
@@ -595,7 +595,12 @@ export const routesList = [
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "19:53"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "20:32"
          },
          {
             "code": "samtredia1",
@@ -628,9 +633,14 @@ export const routesList = [
             "time": "nn:nn"
          },
          {
+            "code": "ureki",
+            "role": "middle",
+            "time": "08:32"
+         },
+         {
             "code": "kobuleti",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "09:22"
          },
          {
             "code": "batumicentral",
@@ -655,7 +665,12 @@ export const routesList = [
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "09:01"
+         },
+         {
+            "code": "ureki",
+            "role": "middle",
+            "time": "09:38"
          },
          {
             "code": "samtredia1",
@@ -688,9 +703,14 @@ export const routesList = [
             "time": "nn:nn"
          },
          {
+            "code": "ureki",
+            "role": "middle",
+            "time": "19:42"
+         },
+         {
             "code": "kobuleti",
             "role": "middle",
-            "time": "nn:nn"
+            "time": "20:15"
          },
          {
             "code": "batumicentral",
