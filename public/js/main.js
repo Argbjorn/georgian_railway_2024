@@ -311,7 +311,8 @@ async function makeStationInfo(station) {
             hideActiveRoute();
         }
         if (activeStation.length > 0) {
-            activeStation[0].setDefault()
+            activeStation[0].setDefault();
+            activeStation.pop()
         }
     })
 
