@@ -2,14 +2,46 @@ import { map } from "./map.js";
 
 const options = {
     mainDefault: {
-        icon: 'circle-o',
-        iconShape: 'marker',
+        icon: 'star',
+        iconSize: [23, 23],
+        iconShape: 'circle',
         borderColor: "#c1121f",
         textColor: "#c1121f"
     },
     mainActive: {
-        icon: 'circle-o',
-        iconShape: 'marker',
+        icon: 'star',
+        iconSize: [23, 23],
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#fff",
+        backgroundColor: "#c1121f"
+    },
+    airportDefault: {
+        icon: 'plane',
+        iconSize: [22, 22],
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#c1121f"
+    },
+    airportActive: {
+        icon: 'plane',
+        iconSize: [22, 22],
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#fff",
+        backgroundColor: "#c1121f"
+    },
+    beachDefault: {
+        icon: 'sun-o',
+        iconSize: [23, 23],
+        iconShape: 'circle',
+        borderColor: "#c1121f",
+        textColor: "#c1121f"
+    },
+    beachActive: {
+        icon: 'sun-o',
+        iconSize: [23, 23],
+        iconShape: 'circle',
         borderColor: "#c1121f",
         textColor: "#fff",
         backgroundColor: "#c1121f"
@@ -46,6 +78,12 @@ export class Station {
         } else if (this.type == "secondary") {
             this.BeautifyIconOptionsDefault = options.secondaryDefault;
             this.BeautifyIconOptionsActive = options.secondaryActive;
+        } else if (this.type == "airport") {
+            this.BeautifyIconOptionsDefault = options.airportDefault;
+            this.BeautifyIconOptionsActive = options.airportActive;
+        } else if (this.type == "beach") {
+            this.BeautifyIconOptionsDefault = options.beachDefault;
+            this.BeautifyIconOptionsActive = options.beachActive;
         };
         this.markerDefault = L.marker(this.coords, {
             icon: L.BeautifyIcon.icon(this.BeautifyIconOptionsDefault)

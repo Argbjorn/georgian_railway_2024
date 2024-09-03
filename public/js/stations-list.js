@@ -18,7 +18,7 @@ export const stations = [
          41.6777291
       ],
       "code": "batumicentral",
-      "type": "secondary",
+      "type": "beach",
       "name_en": "Batumi-Central",
       "name_ka": "ბათუმი-ცენტრალი",
       "name_ru": "Батуми-Пассажирская"
@@ -210,7 +210,7 @@ export const stations = [
          42.488545
       ],
       "code": "kutaisiinternationalairport",
-      "type": "secondary",
+      "type": "airport",
       "name_en": "Kutaisi International Airport",
       "name_ka": "ქუთაისის საერთაშორისო აეროპორტი",
       "name_ru": "Международный аэропорт Кутаиси"
@@ -450,7 +450,7 @@ export const stations = [
          44.7992605
       ],
       "code": "tbilisicentralstation",
-      "type": "secondary",
+      "type": "main",
       "name_en": "Tbilisi Central Station",
       "name_ka": "თბილისის ცენტრალური სადგური",
       "name_ru": "Центральный вокзал Тбилиси"
