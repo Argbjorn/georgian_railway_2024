@@ -787,27 +787,27 @@ export const routesList = [
          {
             "code": "batumicentral",
             "role": "start",
-            "time": "18:30"
+            "time": "17:20"
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "18:50"
+            "time": "17:40"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "19:20"
+            "time": "18:10"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "20:19"
+            "time": "19:09"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "23:31"
+            "time": "22:21"
          }
       ]
    },
@@ -916,78 +916,6 @@ export const routesList = [
             "code": "batumicentral",
             "role": "end",
             "time": "22:13"
-         }
-      ]
-   },
-   {
-      "id": 14669016,
-      "ref": 807,
-      "name:ka": "ბათუმი → თბილისი",
-      "name:en": "Batumi → Tbilisi",
-      "name:ru": "Батуми → Тбилиси",
-      "frequency": "daily, 1 – 30 September",
-      "complete": true,
-      "stations": [
-         {
-            "code": "batumicentral",
-            "role": "start",
-            "time": "17:20"
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "time": "17:40"
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "time": "18:10"
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "time": "19:09"
-         },
-         {
-            "code": "tbilisicentralstation",
-            "role": "end",
-            "time": "22:21"
-         }
-      ]
-   },
-   {
-      "id": 14669013,
-      "ref": 808,
-      "name:ka": "თბილისი → ბათუმი",
-      "name:en": "Tbilisi → Batumi",
-      "name:ru": "Тбилиси → Батуми",
-      "frequency": "daily, 1 – 30 September",
-      "complete": true,
-      "stations": [
-         {
-            "code": "tbilisicentralstation",
-            "role": "start",
-            "time": "10:25"
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "time": "13:44"
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "time": "14:41"
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "time": "15:08"
-         },
-         {
-            "code": "batumicentral",
-            "role": "end",
-            "time": "15:33"
          }
       ]
    },
