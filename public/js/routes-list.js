@@ -445,7 +445,7 @@ export const routesList = [
          {
             "code": "batumicentral",
             "role": "start",
-            "time": "21:35"
+            "time": "21:50"
          },
          {
             "code": "kobuleti",
@@ -455,7 +455,7 @@ export const routesList = [
          {
             "code": "ozurgeti",
             "role": "end",
-            "time": "23:55"
+            "time": "00:08"
          }
       ]
    },
@@ -807,7 +807,7 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "22:21"
+            "time": "22:33"
          }
       ]
    },
@@ -838,12 +838,12 @@ export const routesList = [
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "12:43"
+            "time": "12:49"
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "time": "13:08"
+            "time": "13:20"
          }
       ]
    },
@@ -879,7 +879,7 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "13:11"
+            "time": "13:23"
          }
       ]
    },
@@ -910,12 +910,12 @@ export const routesList = [
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "21:48"
+            "time": "21:54"
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "time": "22:13"
+            "time": "22:25"
          }
       ]
    },
@@ -925,7 +925,7 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "frequency": "5, 7, 12, 14, 19, 21, 26, 28 October",
+      "frequency": "19, 21, 26, 28 October",
       "complete": true,
       "stations": [
          {
@@ -961,7 +961,7 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "frequency": "5, 7, 12, 14, 19, 21, 26, 28 October",
+      "frequency": "19, 21, 26, 28 October",
       "complete": true,
       "stations": [
          {
@@ -1073,7 +1073,7 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "23:20"
+            "time": "23:32"
          }
       ]
    },
@@ -1159,7 +1159,7 @@ export const routesList = [
          {
             "code": "zugdidi",
             "role": "end",
-            "time": "14:21"
+            "time": "14:33"
          }
       ]
    },
@@ -1235,7 +1235,7 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "13:00"
+            "time": "13:12"
          }
       ]
    },
@@ -1316,7 +1316,7 @@ export const routesList = [
          {
             "code": "poti",
             "role": "end",
-            "time": "23:11"
+            "time": "23:14"
          }
       ]
    },
