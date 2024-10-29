@@ -925,7 +925,7 @@ export const routesList = [
       "name:ka": "ბათუმი → თბილისი",
       "name:en": "Batumi → Tbilisi",
       "name:ru": "Батуми → Тбилиси",
-      "frequency": "19, 21, 26, 28 October",
+      "frequency": "2, 4, 9, 11, 16 November",
       "complete": true,
       "stations": [
          {
@@ -961,7 +961,7 @@ export const routesList = [
       "name:ka": "თბილისი → ბათუმი",
       "name:en": "Tbilisi → Batumi",
       "name:ru": "Тбилиси → Батуми",
-      "frequency": "19, 21, 26, 28 October",
+      "frequency": "2, 4, 9, 11, 16 November",
       "complete": true,
       "stations": [
          {
