@@ -9,19 +9,21 @@ export const stations = [
       "type": "secondary",
       "name_en": "Abasha",
       "name_ka": "აბაშა",
-      "name_ru": "Абаша"
+      "name_ru": "Абаша",
+      "gr_code": 57170
    },
    {
       "id": 10056291776,
       "coords": [
-         41.65853,
-         41.6777291
+         41.6584901,
+         41.6776779
       ],
       "code": "batumicentral",
       "type": "beach",
       "name_en": "Batumi-Central",
       "name_ka": "ბათუმი-ცენტრალი",
-      "name_ru": "Батуми-Пассажирская"
+      "name_ru": "Батуми-Пассажирская",
+      "gr_code": 57151
    },
    {
       "id": 10774260690,
@@ -33,7 +35,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Borjomi-Parki",
       "name_ka": "ბორჯომი-პარკი",
-      "name_ru": "Боржоми-Парк"
+      "name_ru": "Боржоми-Парк",
+      "gr_code": 57760
    },
    {
       "id": 11139961453,
@@ -45,7 +48,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Chaladidi",
       "name_ka": "ჭალადიდი",
-      "name_ru": "Чаладиди"
+      "name_ru": "Чаладиди",
+      "gr_code": 57202
    },
    {
       "id": 11001493868,
@@ -57,7 +61,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Chiatura",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Чиатура"
+      "name_ru": "Чиатура",
+      "gr_code": "00000"
    },
    {
       "id": 11001501786,
@@ -69,7 +74,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Gardabani",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Гардабани"
+      "name_ru": "Гардабани",
+      "gr_code": 56260
    },
    {
       "id": 10776367475,
@@ -81,7 +87,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Gori",
       "name_ka": "გორი",
-      "name_ru": "Гори"
+      "name_ru": "Гори",
+      "gr_code": 57900
    },
    {
       "id": 947917958,
@@ -93,7 +100,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Ingiri",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Ингири"
+      "name_ru": "Ингири",
+      "gr_code": 57280
    },
    {
       "id": 11139961445,
@@ -105,7 +113,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Jumati",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Джумати"
+      "name_ru": "Джумати",
+      "gr_code": 57050
    },
    {
       "id": 10785134075,
@@ -117,7 +126,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kakhuri",
       "name_ka": "კახური",
-      "name_ru": "Кахури"
+      "name_ru": "Кахури",
+      "gr_code": 57092
    },
    {
       "id": 10785134082,
@@ -129,7 +139,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kareli",
       "name_ka": "ქარელი",
-      "name_ru": "Карели"
+      "name_ru": "Карели",
+      "gr_code": 57880
    },
    {
       "id": 10785134084,
@@ -141,7 +152,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kaspi",
       "name_ka": "კასპი",
-      "name_ru": "Каспи"
+      "name_ru": "Каспи",
+      "gr_code": 56080
    },
    {
       "id": 10785134080,
@@ -153,7 +165,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kharagouli",
       "name_ka": "ხარაგაული",
-      "name_ru": "Харагоули"
+      "name_ru": "Харагоули",
+      "gr_code": 57680
    },
    {
       "id": 274201993,
@@ -165,7 +178,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Khashuri",
       "name_ka": "ხაშური",
-      "name_ru": "Хашури"
+      "name_ru": "Хашури",
+      "gr_code": 57720
    },
    {
       "id": 3065990612,
@@ -177,7 +191,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kheta",
       "name_ka": "ხეთა",
-      "name_ru": "Хета"
+      "name_ru": "Хета",
+      "gr_code": 57252
    },
    {
       "id": 2520906203,
@@ -189,7 +204,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Khobi",
       "name_ka": "ხობი",
-      "name_ru": "Хоби"
+      "name_ru": "Хоби",
+      "gr_code": 57250
    },
    {
       "id": 10056291775,
@@ -201,7 +217,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kobuleti",
       "name_ka": "ქობულეთი",
-      "name_ru": "Кобулети"
+      "name_ru": "Кобулети",
+      "gr_code": 57120
    },
    {
       "id": 902313867,
@@ -213,7 +230,8 @@ export const stations = [
       "type": "airport",
       "name_en": "Kutaisi International Airport",
       "name_ka": "ქუთაისის საერთაშორისო აეროპორტი",
-      "name_ru": "Международный аэропорт Кутаиси"
+      "name_ru": "Международный аэропорт Кутаиси",
+      "gr_code": 57450
    },
    {
       "id": 10056291803,
@@ -225,7 +243,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kutaisi-1",
       "name_ka": "ქუთაისი-1",
-      "name_ru": "Кутаиси-1"
+      "name_ru": "Кутаиси-1",
+      "gr_code": 57530
    },
    {
       "id": 8190824553,
@@ -237,7 +256,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Kvaloni",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Квалони"
+      "name_ru": "Квалони",
+      "gr_code": 57194
    },
    {
       "id": 10785134079,
@@ -249,7 +269,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Lanchkhuti",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "неизвестная станция"
+      "name_ru": "неизвестная станция",
+      "gr_code": 57040
    },
    {
       "id": 11139961502,
@@ -261,7 +282,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Marelisi",
       "name_ka": "მარელისი",
-      "name_ru": "Марелиси"
+      "name_ru": "Марелиси",
+      "gr_code": 57690
    },
    {
       "id": 10785134078,
@@ -273,7 +295,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Meria",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Мэриа"
+      "name_ru": "Мэриа",
+      "gr_code": 57090
    },
    {
       "id": 11453231327,
@@ -285,7 +308,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Moliti",
       "name_ka": "მოლითი",
-      "name_ru": "Молити"
+      "name_ru": "Молити",
+      "gr_code": 57700
    },
    {
       "id": 10785134086,
@@ -297,7 +321,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Mtskheta",
       "name_ka": "მცხეთა",
-      "name_ru": "Мцхета"
+      "name_ru": "Мцхета",
+      "gr_code": 56040
    },
    {
       "id": 11142332828,
@@ -309,7 +334,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Natanebi",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Натанеби"
+      "name_ru": "Натанеби",
+      "gr_code": 57080
    },
    {
       "id": 10780567207,
@@ -321,7 +347,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Ozurgeti",
       "name_ka": "ოზურგეთი",
-      "name_ru": "Озургети"
+      "name_ru": "Озургети",
+      "gr_code": 57100
    },
    {
       "id": 10785134077,
@@ -333,7 +360,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Platform 11 km",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Платформа 11 км"
+      "name_ru": "Платформа 11 км",
+      "gr_code": 57091
    },
    {
       "id": 1081901401,
@@ -345,7 +373,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Platform 16 km",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Платформа 16 км"
+      "name_ru": "Платформа 16 км",
+      "gr_code": 57093
    },
    {
       "id": 10784971704,
@@ -357,7 +386,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Poti",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Поти"
+      "name_ru": "Поти",
+      "gr_code": 57210
    },
    {
       "id": 11139961503,
@@ -369,7 +399,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Rioni",
       "name_ka": "რიონი",
-      "name_ru": "Риони"
+      "name_ru": "Риони",
+      "gr_code": 57510
    },
    {
       "id": 11001501784,
@@ -381,7 +412,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Rustavi Central",
       "name_ka": "რუსთავი ცენტრალი",
-      "name_ru": "Рустави Центральная"
+      "name_ru": "Рустави Центральная",
+      "gr_code": 56272
    },
    {
       "id": 11001493869,
@@ -393,7 +425,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Sachkhere",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Сачхере"
+      "name_ru": "Сачхере",
+      "gr_code": "00000"
    },
    {
       "id": 10056291791,
@@ -405,7 +438,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Samtredia-1",
       "name_ka": "სამტრედია-1",
-      "name_ru": "Самтредиа-1"
+      "name_ru": "Самтредиа-1",
+      "gr_code": 57000
    },
    {
       "id": 1910235344,
@@ -417,7 +451,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Senaki",
       "name_ka": "სენაკი",
-      "name_ru": "Сенаки"
+      "name_ru": "Сенаки",
+      "gr_code": 57190
    },
    {
       "id": 11142332831,
@@ -429,7 +464,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Supsa",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Супса"
+      "name_ru": "Супса",
+      "gr_code": 57060
    },
    {
       "id": 11139961476,
@@ -441,7 +477,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Sviri",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "Свири"
+      "name_ru": "Свири",
+      "gr_code": 57580
    },
    {
       "id": 1448030489,
@@ -453,7 +490,8 @@ export const stations = [
       "type": "main",
       "name_en": "Tbilisi Central Station",
       "name_ka": "თბილისის ცენტრალური სადგური",
-      "name_ru": "Центральный вокзал Тбилиси"
+      "name_ru": "Центральный вокзал Тбилиси",
+      "gr_code": 56014
    },
    {
       "id": 11139961489,
@@ -465,7 +503,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Tsipa",
       "name_ka": "წიფა",
-      "name_ru": "Ципа"
+      "name_ru": "Ципа",
+      "gr_code": 57702
    },
    {
       "id": 1080385946,
@@ -477,7 +516,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Ureki",
       "name_ka": "ურეკი",
-      "name_ru": "Уреки"
+      "name_ru": "Уреки",
+      "gr_code": 57070
    },
    {
       "id": 10776367473,
@@ -489,7 +529,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Zestafoni",
       "name_ka": "ზესტაფონი",
-      "name_ru": "Зестафони"
+      "name_ru": "Зестафони",
+      "gr_code": 57600
    },
    {
       "id": 10776367480,
@@ -501,7 +542,8 @@ export const stations = [
       "type": "secondary",
       "name_en": "Zugdidi",
       "name_ka": "ზუგდიდი",
-      "name_ru": "Зугдиди"
+      "name_ru": "Зугдиди",
+      "gr_code": 57290
    },
    {
       "id": 11139961498,
@@ -513,6 +555,7 @@ export const stations = [
       "type": "secondary",
       "name_en": "unknown station",
       "name_ka": "უცნობი სადგური",
-      "name_ru": "неизвестная станция"
+      "name_ru": "неизвестная станция",
+      "gr_code": "00000"
    }
 ]
