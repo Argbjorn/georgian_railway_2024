@@ -942,17 +942,17 @@ export const routesList = [
          {
             "code": "zugdidi",
             "role": "start",
-            "time": "17:10"
+            "time": "16:55"
          },
          {
             "code": "ingiri",
             "role": "middle",
-            "time": "17:23"
+            "time": "17:08"
          },
          {
             "code": "kheta",
             "role": "middle",
-            "time": "17:36"
+            "time": "17:21"
          },
          {
             "code": "khobi",
@@ -1099,12 +1099,12 @@ export const routesList = [
          {
             "code": "ingiri",
             "role": "middle",
-            "time": "14:37"
+            "time": "14:52"
          },
          {
             "code": "zugdidi",
             "role": "end",
-            "time": "14:53"
+            "time": "15:08"
          }
       ]
    },
