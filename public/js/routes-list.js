@@ -15,6 +15,16 @@ export const routesList = [
             "time": "10:05"
          },
          {
+            "code": "platform16km",
+            "role": "middle",
+            "time": "nn:nn"
+         },
+         {
+            "code": "kakhuri",
+            "role": "middle",
+            "time": "nn:nn"
+         },
+         {
             "code": "platform11km",
             "role": "middle",
             "time": "10:11"
@@ -139,127 +149,127 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "time": "09:00"
+            "time": "08:45"
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "time": "09:26"
+            "time": "09:09\t"
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "time": "09:54"
+            "time": "09:36\t"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "10:19"
+            "time": "10:00"
          },
          {
             "code": "kareli",
             "role": "middle",
-            "time": "10:38"
+            "time": "10:19"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "11:04"
+            "time": "10:45"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "11:53"
+            "time": "11:23"
          },
          {
             "code": "moliti",
             "role": "middle",
-            "time": "12:10"
+            "time": "11:40"
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "time": "12:27"
+            "time": "nn:nn"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "12:44"
+            "time": "12:14"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "13:20"
+            "time": "12:48"
          },
          {
             "code": "sviri",
             "role": "middle",
-            "time": "14:01"
+            "time": "13:28"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "14:25"
+            "time": "13:46"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "14:57"
+            "time": "14:17"
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "time": "15:13"
+            "time": "14:33"
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "time": "15:59"
+            "time": "15:11"
          },
          {
             "code": "jumati",
             "role": "middle",
-            "time": "16:13"
+            "time": "15:24"
          },
          {
             "code": "supsa",
             "role": "middle",
-            "time": "16:28"
+            "time": "15:44"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "16:38"
+            "time": "15:54"
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "time": "16:52"
+            "time": "16:05"
          },
          {
             "code": "meria",
             "role": "middle",
-            "time": "17:32"
+            "time": "16:59"
          },
          {
             "code": "platform11km",
             "role": "middle",
-            "time": "17:44"
+            "time": "17:10"
          },
          {
             "code": "kakhuri",
             "role": "middle",
-            "time": "17:55"
+            "time": "17:19"
          },
          {
             "code": "platform16km",
             "role": "middle",
-            "time": "18:06"
+            "time": "17:29"
          },
          {
             "code": "ozurgeti",
             "role": "end",
-            "time": "18:12"
+            "time": "17:44"
          }
       ]
    },
@@ -276,72 +286,72 @@ export const routesList = [
          {
             "code": "kutaisi1",
             "role": "start",
-            "time": "12:55"
+            "time": "11:55"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "13:15"
+            "time": "12:15"
          },
          {
             "code": "sviri",
             "role": "middle",
-            "time": "14:00"
+            "time": "13:07"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "14:23"
+            "time": "13:25"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "15:09"
+            "time": "14:05"
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "time": "15:26"
+            "time": "14:22"
          },
          {
             "code": "moliti",
             "role": "middle",
-            "time": "15:38"
+            "time": "14:34"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "15:52"
+            "time": "14:46"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "16:25"
+            "time": "15:10"
          },
          {
             "code": "kareli",
             "role": "middle",
-            "time": "17:06"
+            "time": "15:51"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "17:24"
+            "time": "16:09"
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "time": "17:51"
+            "time": "16:34"
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "time": "18:20"
+            "time": "17:02"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "18:52"
+            "time": "17:35"
          }
       ]
    },
@@ -358,72 +368,72 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "time": "09:00"
+            "time": "08:45"
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "time": "09:26"
+            "time": "09:09\t"
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "time": "09:54"
+            "time": "09:36\t"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "10:19"
+            "time": "10:00"
          },
          {
             "code": "kareli",
             "role": "middle",
-            "time": "10:38"
+            "time": "10:19"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "11:04"
+            "time": "10:45"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "11:53"
+            "time": "11:23"
          },
          {
             "code": "moliti",
             "role": "middle",
-            "time": "12:10"
+            "time": "11:40"
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "time": "12:27"
+            "time": "11:57"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "12:44"
+            "time": "12:14"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "13:20"
+            "time": "12:48"
          },
          {
             "code": "sviri",
             "role": "middle",
-            "time": "14:01"
+            "time": "13:28"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "14:25"
+            "time": "13:46"
          },
          {
             "code": "kutaisi1",
             "role": "end",
-            "time": "15:10"
+            "time": "14:35"
          }
       ]
    },
@@ -522,70 +532,6 @@ export const routesList = [
             "code": "borjomiparki",
             "role": "end",
             "time": "10:47"
-         }
-      ]
-   },
-   {
-      "id": 16010991,
-      "ref": 633,
-      "name:ka": "ქუთაისი → საჩხერე",
-      "name:en": "Kutaisi → Sachkhere",
-      "name:ru": "Кутаиси → Сачхере",
-      "frequency": "daily",
-      "complete": false,
-      "online": false,
-      "stations": [
-         {
-            "code": "kutaisi1",
-            "role": "start",
-            "time": "05:50"
-         },
-         {
-            "code": "zestafoni",
-            "role": "middle",
-            "time": "nn:nn"
-         },
-         {
-            "code": "chiatura",
-            "role": "middle",
-            "time": "nn:nn"
-         },
-         {
-            "code": "sachkhere",
-            "role": "end",
-            "time": "09:19"
-         }
-      ]
-   },
-   {
-      "id": 16010994,
-      "ref": 634,
-      "name:ka": "საჩხერე → ქუთაისი",
-      "name:en": "Sachkhere → Kutaisi",
-      "name:ru": "Сачхере → Кутаиси",
-      "frequency": "daily",
-      "complete": false,
-      "online": false,
-      "stations": [
-         {
-            "code": "sachkhere",
-            "role": "start",
-            "time": "10:25"
-         },
-         {
-            "code": "chiatura",
-            "role": "middle",
-            "time": "nn:nn"
-         },
-         {
-            "code": "zestafoni",
-            "role": "middle",
-            "time": "nn:nn"
-         },
-         {
-            "code": "kutaisi1",
-            "role": "end",
-            "time": "14:02"
          }
       ]
    },
@@ -794,27 +740,27 @@ export const routesList = [
          {
             "code": "batumicentral",
             "role": "start",
-            "time": "16:55"
+            "time": "17:20"
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "17:16"
+            "time": "17:40"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "17:47"
+            "time": "18:10"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "18:47"
+            "time": "19:09"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "22:17"
+            "time": "22:33"
          }
       ]
    },
@@ -836,22 +782,22 @@ export const routesList = [
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "11:43"
+            "time": "11:19"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "12:41"
+            "time": "12:16"
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "13:09"
+            "time": "12:49"
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "time": "13:35"
+            "time": "13:20"
          }
       ]
    },
@@ -868,27 +814,27 @@ export const routesList = [
          {
             "code": "batumicentral",
             "role": "start",
-            "time": "08:00"
+            "time": "08:10"
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "08:21"
+            "time": "08:30"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "08:52"
+            "time": "09:00"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "09:52"
+            "time": "09:59"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "13:17"
+            "time": "13:23"
          }
       ]
    },
@@ -905,27 +851,27 @@ export const routesList = [
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "time": "17:10"
+            "time": "17:05"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "20:53"
+            "time": "20:24"
          },
          {
             "code": "ureki",
             "role": "middle",
-            "time": "21:51"
+            "time": "21:21"
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "time": "22:19"
+            "time": "21:54"
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "time": "22:45"
+            "time": "22:25"
          }
       ]
    },
@@ -942,72 +888,77 @@ export const routesList = [
          {
             "code": "zugdidi",
             "role": "start",
-            "time": "16:55"
+            "time": "17:20"
          },
          {
             "code": "ingiri",
             "role": "middle",
-            "time": "17:08"
+            "time": "17:33"
          },
          {
             "code": "kheta",
             "role": "middle",
-            "time": "17:21"
+            "time": "17:46"
          },
          {
             "code": "khobi",
             "role": "middle",
-            "time": "17:55"
+            "time": "18:05"
          },
          {
             "code": "senaki",
             "role": "middle",
-            "time": "18:15"
+            "time": "18:25"
          },
          {
             "code": "abasha",
             "role": "middle",
-            "time": "18:38"
+            "time": "18:48"
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "time": "18:56"
+            "time": "19:05"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "19:14"
+            "time": "19:21"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "19:31"
+            "time": "19:37"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "20:04"
+            "time": "20:08"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "20:34"
+            "time": "20:36"
+         },
+         {
+            "code": "tsipa",
+            "role": "middle",
+            "time": "nn:nn"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "21:49"
+            "time": "21:38"
          },
          {
             "code": "gori",
             "role": "middle",
-            "time": "22:28"
+            "time": "22:16"
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "time": "23:37"
+            "time": "23:32"
          }
       ]
    },
@@ -1029,82 +980,72 @@ export const routesList = [
          {
             "code": "gori",
             "role": "middle",
-            "time": "09:20"
+            "time": "09:16"
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "time": "09:56"
+            "time": "09:50"
          },
          {
             "code": "tsipa",
             "role": "middle",
-            "time": "10:33"
-         },
-         {
-            "code": "moliti",
-            "role": "middle",
-            "time": "10:49"
-         },
-         {
-            "code": "marelisi",
-            "role": "middle",
-            "time": "11:03"
+            "time": "10:19"
          },
          {
             "code": "kharagouli",
             "role": "middle",
-            "time": "11:18"
+            "time": "11:01"
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "time": "11:50"
+            "time": "11:28"
          },
          {
             "code": "rioni",
             "role": "middle",
-            "time": "12:26"
+            "time": "11:59"
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "time": "12:48"
+            "time": "12:20"
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "time": "13:03"
+            "time": "12:33"
          },
          {
             "code": "abasha",
             "role": "middle",
-            "time": "13:26"
+            "time": "12:55"
          },
          {
             "code": "senaki",
             "role": "middle",
-            "time": "13:43"
+            "time": "13:12"
          },
          {
             "code": "khobi",
             "role": "middle",
-            "time": "14:06"
+            "time": "13:34"
          },
          {
             "code": "kheta",
             "role": "middle",
-            "time": "14:18"
+            "time": "13:46"
          },
          {
             "code": "ingiri",
             "role": "middle",
-            "time": "14:52"
+            "time": "14:05"
          },
          {
             "code": "zugdidi",
             "role": "end",
-            "time": "15:08"
+            "time": "14:33"
          }
       ]
    },
@@ -1425,7 +1366,7 @@ export const routesList = [
          {
             "code": "zestafoni",
             "role": "end",
-            "time": "19:54"
+            "time": "19:52"
          }
       ]
    },
@@ -1479,7 +1420,7 @@ export const routesList = [
          {
             "code": "khashuri",
             "role": "end",
-            "time": "19:09"
+            "time": "19:03"
          }
       ]
    }
